@@ -36,13 +36,13 @@ const MyNavbar = () => {
               </MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink href='#'>Accedi</MDBNavbarLink>
+              <MDBNavbarLink href='#'>Film</MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink href='#'>Registrati</MDBNavbarLink>
+              <MDBNavbarLink href='#'>Serie</MDBNavbarLink>
             </MDBNavbarItem>
           </MDBNavbarNav>
-          <span className='navbar-text'> Navbar text with an inline element </span>
+          <span className='navbar-text'> Accedi / Registrati </span>
         </MDBCollapse>
       </MDBContainer>
     </MDBNavbar>
