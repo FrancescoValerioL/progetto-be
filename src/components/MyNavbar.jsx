@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { MDBBtn, MDBBtnGroup } from 'mdb-react-ui-kit';
+import { MDBBtn, MDBBtnGroup } from "mdb-react-ui-kit";
 
 import {
   MDBNavbar,
@@ -44,10 +44,14 @@ const MyNavbar = () => {
               <MDBNavbarLink href="#">Serie</MDBNavbarLink>
             </MDBNavbarItem>
           </MDBNavbarNav>
+          <form className='container-fluid d-flex justify-content-end'>
+            <MDBBtn color="success" className="mx-2 text-nowrap">
+              Login
+            </MDBBtn>
           
-            <MDBBtn color="success"  className='mx-2 text-nowrap'>Login</MDBBtn>
-            <MDBBtn  className='mx-2 text-nowrap'>Register</MDBBtn>
           
+            <MDBBtn className="mx-2 text-nowrap">Register</MDBBtn>
+            </form>
         </MDBCollapse>
       </MDBContainer>
     </MDBNavbar>
