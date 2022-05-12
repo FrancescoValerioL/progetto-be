@@ -1,16 +1,23 @@
 import './App.css';
-import BootsrapComponent from './components/BootstrapComponent';
-import MDBComponent from './components/MDBComponent';
-import AntComponent from './components/AntComponent';
-import MyNavbar from './components/MyNavbar';
-import LandingPage from './components/LandingPage';
-import CaroselloHome from './components/CaroselloHome';
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import LandingPage from "./components/LandingPage"
+import CaroselloHome from "./components/CaroselloHome"
+import Home from './pages/Home';
+
 
 function App() {
   return (
-    <>
-    <LandingPage />
-    </>
+    <BrowserRouter>
+      <Routes>
+          <Route path="/" element={<LandingPage/>}/>
+          <Route path="/carosello" element={<CaroselloHome />} />
+          <Route path="/home" element={<Home />} />
+
+          
+          
+      </Routes>
+    </BrowserRouter>
   );
 }
 

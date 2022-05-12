@@ -4,7 +4,7 @@ import CaroselloHome from "./CaroselloHome";
 import MyFooter from "./MyFooter";
 import { MDBContainer, MDBRow, MDBCol } from "mdb-react-ui-kit";
 import Landing2 from "./Landing2";
-import MyNav from "./navbar";
+import MyNav from "./Navbar";
 import Landing from "./Landing";
 
 

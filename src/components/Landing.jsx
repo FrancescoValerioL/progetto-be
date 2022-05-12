@@ -1,3 +1,4 @@
+import { MDBBtn } from "mdb-react-ui-kit";
 import { useState } from "react";
 import { Navbar, Container, Col, Button, Row } from "react-bootstrap";
 import film from './img/film.png';
@@ -24,7 +25,7 @@ const Landing = () =>{
                 <div id="box2">
                 <div id="box1">
                 <h3 id='title1'>Film, serie TV e tanto altro. Senza limiti.</h3>
-                <button className="myButton2">Registrati</button>
+                <MDBBtn className="myButton2">Registrati</MDBBtn>
                 </div>
                 </div>
                 </Col>

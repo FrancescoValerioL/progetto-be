@@ -1,3 +1,4 @@
+import { MDBBtn } from "mdb-react-ui-kit";
 import { useState } from "react";
 import { Navbar, Container, Col, Button, Stack } from "react-bootstrap";
 import logo from './img/logo.png';
@@ -28,7 +29,7 @@ const MyNav = () =>{
                             />
                         </Navbar.Brand>
                         <Stack direction="horizontal" gap={4}>
-                            <button className="ms-auto myButton" >Accedi</button>
+                            <MDBBtn className="ms-auto myButton" href='/home'>Accedi</MDBBtn>
                         </Stack>
                     </Container>
             </Navbar>
