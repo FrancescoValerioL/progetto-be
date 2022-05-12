@@ -1,6 +1,8 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import MyFooter from "./MyFooter";
 import MyNavbar from "./MyNavbar";
+
 
 const LandingPage = () => {
     return(
@@ -14,7 +16,9 @@ const LandingPage = () => {
                     <h1>Contenuto</h1>
                 </Col>
             </Row>
+            <MyFooter />
         </Container>
+
     )
 }
 
