@@ -9,67 +9,68 @@ import {
 
 const MyFooter = () => {
   return (
-    <MDBFooter className='bg-light text-center text-white'>
-      <div className='container p-4 pb-0'>
+    <MDBFooter className='text-center text-white' style={{ backgroundColor: '#f1f1f1' }}>
+      <MDBContainer className='pt-4'>
         <section className='mb-4'>
           <a
-            className='btn btn-primary btn-floating m-1'
-            style={{ backgroundColor: '#3b5998' }}
+            className='btn btn-link btn-floating btn-lg text-dark m-1'
             href='#!'
             role='button'
+            data-mdb-ripple-color='dark'
           >
-            <MDBIcon fab icon='facebook-f' />
+            <MDBIcon fab className='fab fa-facebook-f' />
           </a>
 
           <a
-            className='btn btn-primary btn-floating m-1'
-            style={{ backgroundColor: '#55acee' }}
+            className='btn btn-link btn-floating btn-lg text-dark m-1'
             href='#!'
             role='button'
+            data-mdb-ripple-color='dark'
           >
-            <MDBIcon fab icon='twitter' />
+            <MDBIcon fab className='fa-twitter' />
           </a>
 
           <a
-            className='btn btn-primary btn-floating m-1'
-            style={{ backgroundColor: '#dd4b39' }}
+            className='btn btn-link btn-floating btn-lg text-dark m-1'
             href='#!'
             role='button'
+            data-mdb-ripple-color='dark'
           >
-            <MDBIcon fab icon='google' />
-          </a>
-          <a
-            className='btn btn-primary btn-floating m-1'
-            style={{ backgroundColor: '#ac2bac' }}
-            href='#!'
-            role='button'
-          >
-            <MDBIcon fab icon='instagram' />
+            <MDBIcon fab className='fa-google' />
           </a>
 
           <a
-            className='btn btn-primary btn-floating m-1'
-            style={{ backgroundColor: '#0082ca' }}
+            className='btn btn-link btn-floating btn-lg text-dark m-1'
             href='#!'
             role='button'
+            data-mdb-ripple-color='dark'
           >
-            <MDBIcon fab icon='linkedin-in' />
+            <MDBIcon fab className='fa-instagram' />
           </a>
 
           <a
-            className='btn btn-primary btn-floating m-1'
-            style={{ backgroundColor: '#333333' }}
+            className='btn btn-link btn-floating btn-lg text-dark m-1'
             href='#!'
             role='button'
+            data-mdb-ripple-color='dark'
           >
-            <MDBIcon fab icon='github' />
+            <MDBIcon fab className='fa-linkedin' />
+          </a>
+
+          <a
+            className='btn btn-link btn-floating btn-lg text-dark m-1'
+            href='#!'
+            role='button'
+            data-mdb-ripple-color='dark'
+          >
+            <MDBIcon fab className='fa-github' />
           </a>
         </section>
-      </div>
+      </MDBContainer>
 
-      <div className='text-center p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
+      <div className='text-center text-dark p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
         © 2020 Copyright:
-        <a className='text-white' href='https://mdbootstrap.com/'>
+        <a className='text-dark' href='https://mdbootstrap.com/'>
           MDBootstrap.com
         </a>
       </div>
