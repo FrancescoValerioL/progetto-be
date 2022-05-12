@@ -28,6 +28,10 @@ const Landing = () =>{
                 <MDBBtn className="myButton2">Registrati</MDBBtn>
                 </div>
                 </div>
+                <div id="boxS">
+                <h3 id='titleS'>Film, serie TV e tanto altro. Senza limiti.</h3>
+                <MDBBtn id="myButtonS" className="myButton">Registrati</MDBBtn>
+                </div>
                 </Col>
             </Row>
         </Container>
