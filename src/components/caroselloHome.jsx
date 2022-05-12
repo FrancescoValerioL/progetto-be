@@ -11,29 +11,27 @@ import {
 
 const CaroselloHome = (props) => {
   return (
-    <MDBCarousel showIndicators >
+    <MDBCarousel showIndicators dark className='bg-white-grey'>
       <MDBCarouselInner>
         <MDBCarouselItem className='active'>
           <MDBRow>
-          <MDBCol md={6}><MDBCarouselElement src={props.img} alt={props.titolo}/></MDBCol>
+          <MDBCol md={6} className="d-flex align-items-center justify-content-center"><img src={props.img} alt={props.titolo} className="img-resized"/></MDBCol>
           <MDBCol md={6}><h1>Cose relative al film</h1></MDBCol>
           </MDBRow>
         </MDBCarouselItem>
 
         <MDBCarouselItem>
-          <MDBCarouselElement src={props.img} alt={props.titolo} />
-          <MDBCarouselCaption>
-            <h5>{props.titolo}</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </MDBCarouselCaption>
+        <MDBRow>
+          <MDBCol md={6} className="d-flex align-items-center justify-content-center"><img src={props.img} alt={props.titolo} className="img-resized"/></MDBCol>
+          <MDBCol md={6}><h1>Cose relative al film</h1></MDBCol>
+          </MDBRow>
         </MDBCarouselItem>
 
         <MDBCarouselItem>
-          <MDBCarouselElement src={props.img} alt={props.titolo} />
-          <MDBCarouselCaption>
-            <h5>{props.titolo}</h5>
-            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-          </MDBCarouselCaption>
+        <MDBRow>
+          <MDBCol md={6} className="d-flex align-items-center justify-content-center"><img src={props.img} alt={props.titolo} className="img-resized"/></MDBCol>
+          <MDBCol md={6}><h1>Cose relative al film</h1></MDBCol>
+          </MDBRow>
         </MDBCarouselItem>
       </MDBCarouselInner>
     </MDBCarousel>

@@ -2,8 +2,12 @@ body {
   font-family: Roboto, Helvetica, Arial, sans-serif;
 }
 
-.carousel-img {
-  height:480px;
+.img-resized {
+   width: auto; height: 500px; 
+}
+
+.bg-white-grey {
+  background-color: whitesmoke;
 }
 
 .App {
