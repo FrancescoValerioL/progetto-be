@@ -6,21 +6,8 @@ const Landing2 = () =>{
 
     return(
         <>
-        <Container fluid>
-        <Row className="d-flex align-items-center justify-content-center">
-            <Row>
-                <Col className="d-flex  justify-content-center mt-5">
-                <h1>Goditi Netflix sulla tua TV.</h1>
-                </Col>
-                </Row>
-                <Row>
-                <Col className="d-flex  justify-content-center mb-5">
-                <Button size="lg" variant="dark">Accedi</Button>
-                </Col>
-                </Row>
-                
-            </Row>
-            <Row style={{backgroundColor: '#bdc2ff'}} className="d-flex align-items-center justify-content-center">
+        <Container style={{marginTop: '70px'}} fluid>
+            <Row style={{backgroundColor: '#b3d6ff'}} className="d-flex align-items-center justify-content-center">
                 <Col md={5}>
                 <img className="d-block w-75" src="https://cdn-icons-png.flaticon.com/512/3947/3947041.png" alt="1" />
                 </Col>
@@ -38,7 +25,7 @@ const Landing2 = () =>{
                 <img className="d-block w-75" src="https://cdn-icons-png.flaticon.com/512/3677/3677179.png" alt="1" />
                 </Col>
             </Row>
-            <Row style={{backgroundColor: '#bdc2ff'}} className="d-flex align-items-center justify-content-center">
+            <Row style={{backgroundColor: '#b3d6ff'}} className="d-flex align-items-center justify-content-center">
                 <Col md={5}>
                 <img className="d-block w-75" src="https://cdn-icons-png.flaticon.com/512/3567/3567284.png" alt="1" />
                 </Col>
