@@ -5,18 +5,19 @@ import {
   MDBCarouselItem,
   MDBCarouselElement,
   MDBCarouselCaption,
+  MDBCol,
+  MDBRow,
 } from 'mdb-react-ui-kit';
 
 const CaroselloHome = (props) => {
   return (
-    <MDBCarousel showIndicators showControls fade>
+    <MDBCarousel showIndicators >
       <MDBCarouselInner>
         <MDBCarouselItem className='active'>
-          <MDBCarouselElement src={props.img} alt={props.titolo} />
-          <MDBCarouselCaption>
-            <h5>{props.titolo}</h5>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          </MDBCarouselCaption>
+          <MDBRow>
+          <MDBCol md={6}><MDBCarouselElement src={props.img} alt={props.titolo}/></MDBCol>
+          <MDBCol md={6}><h1>Cose relative al film</h1></MDBCol>
+          </MDBRow>
         </MDBCarouselItem>
 
         <MDBCarouselItem>
