@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import CaroselloHome from "./caroselloHome";
+import CaroselloHome from "./CaroselloHome";
 import MyFooter from "./MyFooter";
 import MyNavbar from "./MyNavbar";
 import { MDBContainer, MDBRow, MDBCol } from "mdb-react-ui-kit";
