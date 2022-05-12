@@ -10,14 +10,10 @@ const LandingPage = () => {
     return(
         <>
         <MDBContainer fluid>
-            <MDBRow className="mb-12">
+            <MDBRow className="">
             <MyNavbar />
             </MDBRow>
-            
             <MDBRow className="h-100">
-                <MDBCol className="d-flex align-items-center justify-content-center" >
-                    <h1>Contenuto</h1>
-                </MDBCol>
             </MDBRow>
             <MDBRow className="d-flex align-items-center justify-content-center">
             </MDBRow>
