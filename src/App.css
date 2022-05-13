@@ -109,6 +109,7 @@ body {
 .myButton2:hover {
   background-color: white;
   color: #658ffb;
+  border: 2px solid white;
   transition: background-color 0.5s;
 }
 
