@@ -25,7 +25,7 @@ const CardFilm = (props) => {
   };
 
   return (
-    <MDBCard style={{ maxWidth: "22rem" }}>
+    <MDBCard style={{ maxWidth: "18rem" }}>
       <MDBCardImage src={props.img} position="top" alt={props.title} />
       <MDBCardBody>
         <MDBCardTitle>{props.title}</MDBCardTitle>
