@@ -8,7 +8,7 @@ const Home = () => {
   const [film, setFilm] = useState({});
 
   useEffect(() => {
-    fetchFilm();
+    fetchFilm(414906);
   }, []);
 
   const fetchFilm = (id) => {
