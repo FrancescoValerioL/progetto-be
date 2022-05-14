@@ -1,41 +1,27 @@
-import { MDBBtn,
-    MDBModal,
-    MDBModalDialog,
-    MDBModalContent,
-    MDBModalHeader,
-    MDBModalTitle,
-    MDBModalBody,
-    MDBModalFooter,
-  } from 'mdb-react-ui-kit';import { useState } from "react";
+import { MDBBtn } from "mdb-react-ui-kit";
+import { useState } from "react";
 import { Card, Modal, Button } from "react-bootstrap";
 
+const GuardaFilm = (props) => {
+  const [show, setShow] = useState(false);
 
-const ProvaOverlay = (props) =>{
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
-    const [basicModal, setBasicModal] = useState(true);
+  return (
+    <>
+    <MDBBtn onClick={handleShow} className="myButton">Guarda</MDBBtn>
+      <Modal size="xl" show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>{props.nome}</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <img src={props.img} style={{ width: "100%" }} />
+        </Modal.Body>
+        <Modal.Footer></Modal.Footer>
+      </Modal>
+    </>
+  );
+};
 
-    const toggleShow = () => setBasicModal(!basicModal);
-
-    return(
-        <>
-        <MDBModal show={basicModal} setShow={setBasicModal} tabIndex='-1'>
-          <MDBModalDialog>
-            <MDBModalContent>
-              <MDBModalHeader>
-                <MDBModalTitle>{props.nome}</MDBModalTitle>
-                <MDBBtn className='btn-close' color='none' onClick={toggleShow}></MDBBtn>
-              </MDBModalHeader>
-              <MDBModalBody>
-              <img src={props.img} style={{width: '100%'}} />
-              </MDBModalBody>
-              <MDBModalFooter>
-              </MDBModalFooter>
-            </MDBModalContent>
-          </MDBModalDialog>
-        </MDBModal>
-      </>
-    )
-}
-
-export default ProvaOverlay
-
+export default GuardaFilm;
