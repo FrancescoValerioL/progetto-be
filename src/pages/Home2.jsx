@@ -10,18 +10,6 @@ import SliderHome from "../components/SliderHome";
 
 const Home2 = () =>{
 
-    /*useEffect(() => {
-      fetchFilm(414906);
-    }, []);
-  
-    const fetchFilm = (id) => {
-      axios
-        .get(`http://localhost:2000/api/datiFilm?idFilm=${id}`)
-        .then(function (response) {
-          setFilm(response.data);
-        });
-    };
-    */
 
     return(
         <>
