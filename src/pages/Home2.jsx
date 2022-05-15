@@ -5,10 +5,12 @@ import CardFilm from "../components/CardFilm";
 import { Col, Container, Row } from "react-bootstrap";
 import { MDBBtn } from "mdb-react-ui-kit";
 import axios from "axios";
-import SliderHome from "../components/SliderHome";
+import { trendingWeek, topRated } from "../scripts/movie";
+
 
 
 const Home2 = () =>{
+    const [film, setFilm] = useState({});
 
     /*useEffect(() => {
       fetchFilm(414906);
@@ -26,7 +28,27 @@ const Home2 = () =>{
     return(
         <>
         <NavbarHome />
-        <SliderHome />
+        <Container>
+        <Row className="mt-5 d-flex align-items-center justify-content-center">
+          <Col md={8} className="d-flex justify-content-center mt-2">
+            {film.length != 0 ? (
+              <CardFilm
+                title={film.title}
+                original_title={film.original_title}
+                img={film.img}
+                overview={film.overview}
+                genres={film.genres}
+              />
+            ) : (
+              <></>
+            )}
+
+          </Col>
+          <Col>
+              <button onClick={topRated}>Clicca</button>
+          </Col>
+        </Row>
+      </Container>
         </>
     )
 }
