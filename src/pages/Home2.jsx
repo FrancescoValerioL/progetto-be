@@ -6,6 +6,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import { MDBBtn } from "mdb-react-ui-kit";
 import axios from "axios";
 import SliderHome from "../components/SliderHome";
+import { topRatedTV } from "../scripts/tv";
 
 
 const Home2 = () =>{
@@ -15,6 +16,7 @@ const Home2 = () =>{
         <>
         <NavbarHome />
         <SliderHome />
+        <button onClick={ topRatedTV }>Clicca</button>
         </>
     )
 }

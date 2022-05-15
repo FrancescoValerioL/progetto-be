@@ -16,7 +16,9 @@ const topRated = () => {
     .then(function (response) {
       films = response.data.map(elem => elem);
       console.log(films)
+      return films
     });
+    
 }
 
 export { trendingWeek, topRated }
