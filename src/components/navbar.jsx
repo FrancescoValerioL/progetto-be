@@ -21,7 +21,7 @@ const MyNav = () =>{
         <>
             <Navbar className={nav ? 'shadowActive' : 'shadowOff'}  sticky="top">
                     <Container className="mt-2">
-                        <Navbar.Brand id='mynav' href="#home">
+                        <Navbar.Brand href="#home">
                             <img
                             alt=""
                             src={logo}

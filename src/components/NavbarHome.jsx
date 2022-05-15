@@ -23,9 +23,15 @@ const NavbarHome = () => {
 
   return (
     <>
-    <Navbar  bg="light" expand='xl' className="mb-3">
-      <Container fluid>
-        <Navbar.Brand href="#">Navbar Offcanvas</Navbar.Brand>
+    <Navbar  bg="light" expand='xl' className={nav ? 'shadowActive' : 'shadowOff'} sticky="top">
+      <Container className="mt-2">
+        <Navbar.Brand href="#">
+                            <img
+                            alt=""
+                            src={logo}
+                            width="180"
+                            />
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-xl`} />
         <Navbar.Offcanvas
           id={`offcanvasNavbar-expand-xl`}
@@ -38,17 +44,17 @@ const NavbarHome = () => {
             </Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body>
-            <Nav className="justify-content-end flex-grow-1 pe-3">
+            <Nav  className="justify-content-end flex-grow-1 pe-3">
               <Nav.Link href="#action1">Home</Nav.Link>
-              <Nav.Link href="#action2">Link</Nav.Link>
+              <Nav.Link href="#action2">Film</Nav.Link>
+              <Nav.Link href="#action2">Serie tv</Nav.Link>
               <NavDropdown
-                title="Dropdown"
+                title="Categorie"
                 id={`offcanvasNavbarDropdown-expand-xl`}
               >
-                <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action4">
-                  Another action
-                </NavDropdown.Item>
+                <NavDropdown.Item href="#action3">Azione</NavDropdown.Item>
+                <NavDropdown.Item href="#action4">Commedie</NavDropdown.Item>
+                <NavDropdown.Item href="#action4">Fantasy</NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item href="#action5">
                   Something else here
@@ -58,11 +64,10 @@ const NavbarHome = () => {
             <Form className="d-flex">
               <FormControl
                 type="search"
-                placeholder="Search"
+                placeholder="Cerca..."
                 className="me-2"
                 aria-label="Search"
               />
-              <Button variant="outline-success">Search</Button>
             </Form>
           </Offcanvas.Body>
         </Navbar.Offcanvas>
