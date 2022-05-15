@@ -5,13 +5,14 @@ import CardFilm from "../components/CardFilm";
 import { Col, Container, Row } from "react-bootstrap";
 import { MDBBtn } from "mdb-react-ui-kit";
 import axios from "axios";
+import { trendingWeek, topRated } from "../scripts/movie";
 
 
 
 const Home2 = () =>{
     const [film, setFilm] = useState({});
 
-    useEffect(() => {
+    /*useEffect(() => {
       fetchFilm(414906);
     }, []);
   
@@ -22,6 +23,7 @@ const Home2 = () =>{
           setFilm(response.data);
         });
     };
+    */
 
     return(
         <>
@@ -41,6 +43,9 @@ const Home2 = () =>{
               <></>
             )}
 
+          </Col>
+          <Col>
+              <button onClick={topRated}>Clicca</button>
           </Col>
         </Row>
       </Container>
