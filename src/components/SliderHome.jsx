@@ -13,17 +13,25 @@ const SliderHome = () => {
     axios
     .get(`http://localhost:2000/api/movie/topRated`)
     .then(function (response) {
+      console.log(response.data)
       setFilms(response.data)
       console.log(films)
       
     });
   },[])
 
+  const createCarousel = () =>{
+    for(let i = 0; i < films.length / 5; i++){
+      //da implementare
+    }
+  }
+
 
   return (
     films.length != 0 ?
     <>
       <Carousel fade>
+        
         {films.map((el) => (
           <Carousel.Item key={el.id} interval={1000}>
             <div className="drk side-crop">
@@ -35,6 +43,7 @@ const SliderHome = () => {
             </Carousel.Caption>
           </Carousel.Item>
         ))}
+        
       </Carousel>
     </>:
     <></>
