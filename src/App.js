@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Home2 from "./pages/Home2";
 import Horizontal from "./pages/Horizontal";
 import RicercaPerGenere from "./pages/Ricerca";
+import RicercaPerTitolo from "./pages/RicercaPerTitolo";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/home" element={<Home2 />} />
         <Route path="/horizontal" element={<Horizontal />} />
         <Route path="/ricercaPerGenere" element={<RicercaPerGenere />} />
+        <Route path="/ricercaPerTitolo" element={<RicercaPerTitolo />} />
       </Routes>
     </BrowserRouter>
   );
