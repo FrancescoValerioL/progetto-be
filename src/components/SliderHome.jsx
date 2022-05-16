@@ -1,5 +1,5 @@
 import { MDBBtn } from "mdb-react-ui-kit";
-import { Carousel } from "react-bootstrap";
+import { Carousel, Container } from "react-bootstrap";
 import GuardaFilm from "./esempioOverlay";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -30,7 +30,8 @@ const SliderHome = () => {
   return (
     films.length != 0 ?
     <>
-      <Carousel fade>
+    <Container className="mt-3 d-flex align-items-center justify-content-center">
+      <Carousel fade className="d-block w-75">
         
         {films.map((el) => (
           <Carousel.Item key={el.id} interval={1000}>
@@ -45,6 +46,7 @@ const SliderHome = () => {
         ))}
         
       </Carousel>
+      </Container>
     </>:
     <></>
   );
