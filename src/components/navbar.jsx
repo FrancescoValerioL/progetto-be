@@ -1,41 +1,34 @@
 import { MDBBtn } from "mdb-react-ui-kit";
 import { useState } from "react";
 import { Navbar, Container, Col, Button, Stack } from "react-bootstrap";
-import logo from './img/logo.png';
+import logo from "./img/logo.png";
 
+const MyNav = () => {
+  const [nav, setNav] = useState(false);
 
-const MyNav = () =>{
+  const change = () => {
+    if (window.scrollY >= 30) setNav(true);
+    else setNav(false);
+  };
 
-    const [nav, setNav] = useState(false)
+  window.addEventListener("scroll", change);
 
-    const change = () =>{
-        if (window.scrollY >= 30)
-            setNav(true)
-        else
-            setNav(false)
-    }
+  return (
+    <>
+      <Navbar className={nav ? "shadowActive" : "shadowOff"} sticky="top">
+        <Container className="mt-2">
+          <Navbar.Brand href="/home">
+            <img alt="" src={logo} width="180" />
+          </Navbar.Brand>
+          <Stack direction="horizontal" gap={4}>
+            <MDBBtn className="ms-auto myButton" href="/home">
+              Accedi
+            </MDBBtn>
+          </Stack>
+        </Container>
+      </Navbar>
+    </>
+  );
+};
 
-    window.addEventListener('scroll', change)
-
-    return(
-        <>
-            <Navbar className={nav ? 'shadowActive' : 'shadowOff'}  sticky="top">
-                    <Container className="mt-2">
-                        <Navbar.Brand href="#home">
-                            <img
-                            alt=""
-                            src={logo}
-                            width="180"
-                            />
-                        </Navbar.Brand>
-                        <Stack direction="horizontal" gap={4}>
-                            <MDBBtn className="ms-auto myButton" href='/home'>Accedi</MDBBtn>
-                        </Stack>
-                    </Container>
-            </Navbar>
-        </>
-    )
-}
-
-
-export default MyNav 
+export default MyNav;
