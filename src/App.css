@@ -272,6 +272,7 @@ Alternativa F9F9ED */
 #container  {
   width: 100%;
   overflow-x: scroll; 
+  scroll-behavior: smooth;
 }
 
 #container::-webkit-scrollbar  {
