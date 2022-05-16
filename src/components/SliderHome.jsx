@@ -6,6 +6,7 @@ import axios from "axios";
 
 const SliderHome = () => {
   let [films, setFilms] = useState([]);
+  let [video, setVideo] = useState("");
 
   useEffect(() => {
     films = [];
@@ -18,15 +19,24 @@ const SliderHome = () => {
       });
   }, []);
 
-  const createCarousel = () => {
-    for (let i = 0; i < films.length / 5; i++) {
-      //da implementare
-    }
+  const Video = (movie_id) => {
+    axios
+      .get(`https://api.themoviedb.org/3/movie/${movie_id}/videos`, {
+        params: {
+          apy_key: "205712c8b4bad38dc18a8f9c83c0f88e",
+          language: "it-IT",
+        },
+      })
+      .then(function (response) {
+        console.log(response.data);
+        setFilms(response.data);
+        console.log(films);
+      });
   };
 
   return films.length != 0 ? (
     <>
-      <Container className="mt-3 d-flex align-items-center justify-content-center">
+      <Container className="mt-3 mb-3 d-flex align-items-center justify-content-center">
         <Carousel fade className="d-block w-75">
           {films.map((el) => (
             <Carousel.Item key={el.id} interval={1000}>

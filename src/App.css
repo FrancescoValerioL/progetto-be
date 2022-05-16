@@ -57,16 +57,17 @@ Alternativa F9F9ED */
   background-color: #bbe6e47b;
 }
 
- /* Hide scrollbar for Chrome, Safari and Opera */
+ /* Hide scrollbar for Chrome, Safari and Opera 
  .horizontalrow::-webkit-scrollbar {
   display: none;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
+/* Hide scrollbar for IE, Edge and Firefox 
 .horizontalrow {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge 
+  scrollbar-width: none;  /* Firefox 
 } 
+*/
 
 
 
