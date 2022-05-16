@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { ricercaPerGenere } from "../scripts/tv";
 import { Container, Col, Row, Image } from "react-bootstrap";
 
-const Ricerca = () => {
+const RicercaPerGenere = () => {
   const [genre, setGenre] = useState("");
   const [found, setFound] = useState([]);
 
@@ -54,4 +54,4 @@ const Ricerca = () => {
     </>
   );
 };
-export default Ricerca;
+export default RicercaPerGenere;
