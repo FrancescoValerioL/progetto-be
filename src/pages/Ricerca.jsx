@@ -37,8 +37,8 @@ const RicercaPerGenere = () => {
           <h1>{genre}</h1>
         </Row>
       </Container>
-      <Container fluid className="overflow-auto bg-row-1 mb-2 horizontalrow">
-        <Row className="flex-nowrap mt-2 mb-2">
+      <Container fluid className="overflow-auto bg-row-1 mb-2">
+        <Row className="mt-2 mb-2">
           {found != undefined ? (
             found.map((element) => (
               <Col key={element.id}>
