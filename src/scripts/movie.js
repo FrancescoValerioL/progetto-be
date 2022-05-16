@@ -1,14 +1,21 @@
 import axios from "axios";
 
-const trendingWeek = () => {
-  let films = [];
-  axios
-    .get(`http://localhost:2000/api/movie/trendingWeek`)
-    .then(function (response) {
-      films = response.data.map((elem) => elem);
-      console.log(films);
-    });
-};
+function trendingWeek() {
+  return new Promise((resolve) => {
+    let films = [];
+    axios
+      .get(`http://localhost:2000/api/movie/trendingWeek`)
+      .then(function (response) {
+        films = response.data.map((elem) => elem);
+        console.log(films);
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      });
+  });
+}
+
 function topRated() {
   return new Promise((resolve) => {
     let films = [];
