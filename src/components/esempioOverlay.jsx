@@ -19,7 +19,7 @@ const GuardaFilm = (props) => {
         </Modal.Header>
         <Modal.Body style={{backgroundColor: '#b3d6ff'}}>
           <Row className="mt-3 d-flex align-items-center justify-content-center">
-          <iframe allowfullscreen="allowfullscreen" height="400" style={{ width: "90%" }} src={props.video}></iframe>
+          <iframe allowFullScreen="allowfullscreen" height="400" style={{ width: "90%" }} src={props.video}></iframe>
           </Row>
           <Row className="mt-5 d-flex align-items-center justify-content-center">
           <p className="textPlayVideo">{props.text}</p>
@@ -32,5 +32,4 @@ const GuardaFilm = (props) => {
 
 export default GuardaFilm;
 
-//<img src={props.img} style={{ width: "100%" }} />
 
