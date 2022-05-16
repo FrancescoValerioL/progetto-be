@@ -33,6 +33,11 @@ const Horizontal = () => {
       });
   }, []);
 
+  const scroll = () => {
+    document.getElementById('container').scrollLeft += 20;
+  }
+
+
   return (
     <>
       <NavbarHome />
@@ -70,6 +75,16 @@ const Horizontal = () => {
           ))}
         </Row>
       </Container>
+
+      <Row className="flex-nowrap mt-2 mb-2" id="container">
+        {filmsTrending.map((element) => (
+            <Col id="content" key={element.id}>
+              <Image src={element.img} style={{ width: "300px" }} />{" "}
+            </Col>
+          ))}
+</Row>
+
+<button id="slide" type="button" onClick={scroll}>Slide right</button>
     </>
   );
 };
