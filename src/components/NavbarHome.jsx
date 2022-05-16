@@ -56,16 +56,16 @@ const NavbarHome = () => {
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Nav.Link href="#action1">Home</Nav.Link>
-                <Nav.Link href="#action2">Film</Nav.Link>
-                <Nav.Link href="#action2">Serie tv</Nav.Link>
+                <Nav.Link href="/home">Home</Nav.Link>
+                <Nav.Link href="/ricercapertitolo">Cerca serie TV</Nav.Link>
+                <Nav.Link href="/ricercapergenere">Ricerca per Genere</Nav.Link>
                 <NavDropdown
                   title="Categorie"
                   id={`offcanvasNavbarDropdown-expand-xl`}
                 >
-                  <NavDropdown.Item href="#action3">Azione</NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">Commedie</NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">Fantasy</NavDropdown.Item>
+                  <NavDropdown.Item href="#action3">azione3</NavDropdown.Item>
+                  <NavDropdown.Item href="#action4">azione4</NavDropdown.Item>
+                  <NavDropdown.Item href="#action4">azione5</NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item href="#action5">
                     Something else here
