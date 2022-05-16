@@ -13,13 +13,13 @@ const Landing2 = () =>{
                 <Col md={6}>
                 <img style={{width:'100%'}} src={tv} alt="1" />
                 </Col>
-                <Col md={6}>
+                <Col className="marginTextlanding" md={6}>
                 <h1 className="textLanding">Goditi BE stream sulla tua TV.</h1>
                 <h5 className="textLanding">Guarda BE stream su smart TV, Playstation, Xbox, Chromecast, Apple TV, lettori Blu-ray e molti altri dispositivi.</h5>
                 </Col>
             </Row>
             <Row className="d-flex align-items-center justify-content-center">
-                <Col  md={6}>
+                <Col className="marginTextlanding" md={6}>
                 <h1 className="textLanding1">Un infinita di film per te.</h1>
                 <h5 className="textLanding1">Scegli tra un ampio catalogo di film e serie tv per non annoiarti mai.</h5>
                 </Col>

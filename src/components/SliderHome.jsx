@@ -36,8 +36,8 @@ const SliderHome = () => {
 
   return films.length != 0 ? (
     <>
-      <Container className="mt-3 mb-3 d-flex align-items-center justify-content-center">
-        <Carousel fade className="d-block w-75">
+      <Container className="mt-5 mb-5 d-flex align-items-center justify-content-center">
+        <Carousel fade>
           {films.map((el) => (
             <Carousel.Item key={el.id} interval={1000}>
               <div className="drk side-crop">

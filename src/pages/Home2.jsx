@@ -7,6 +7,8 @@ import SliderHome from "../components/SliderHome";
 import MyFooter from "../components/MyFooter";
 import axios from "axios";
 import { MDBIcon } from "mdb-react-ui-kit";
+import GuardaFilm2 from "../components/GuardaFilm2";
+
 
 const Home = () => {
   let [filmsTop, setFilms] = useState([]);
@@ -37,11 +39,11 @@ const Home = () => {
   }, []);
 
   const scrollRight = () => {
-    document.getElementById("riga1").scrollLeft += 1000;
+    document.getElementById("riga1").scrollLeft += 900;
   };
 
   const scrollLeft = () => {
-    document.getElementById("riga1").scrollLeft -= 1000;
+    document.getElementById("riga1").scrollLeft -= 900;
   };
 
   const scrollRight1 = () => {
@@ -56,26 +58,26 @@ const Home = () => {
     <>
       <NavbarHome />
       <SliderHome />
-      <h2 className="mt-2">Top Movie</h2>
+      <h2 className="bg-text-dark-liver title-riga">Top Movie</h2>
       <Container
         fluid
-        className="overflow-auto horizontalrow d-flex align-items-center justify-content-center bg-powder-blue"
+        className="overflow-auto horizontalrow d-flex align-items-center justify-content-center"
       >
+        
         <MDBIcon
-          style={{ zIndex: "1" }}
-          size="4x"
+          style={{ zIndex: "1"}}
+          size="3x"
           id="slide"
           type="button"
           onClick={scrollLeft}
           fas
           icon="angle-left"
         />
-        <Row className="flex-nowrap mt-2 mb-2 scorri" id="riga1">
+        <Row className="flex-nowrap scorri d-flex align-items-center" style={{height: '330px'}} id="riga1">
           {filmsTop != undefined ? (
             filmsTrending.map((element) => (
               <Col id="content" key={element.id}>
-                <Image src={element.img} style={{ width: "200px" }} />{" "}
-                <p className="text-center mt-2 text-title">{element.title}</p>
+                <GuardaFilm2 img={element.img} nome={element.title}/>
               </Col>
             ))
           ) : (
@@ -83,22 +85,23 @@ const Home = () => {
           )}
         </Row>
         <MDBIcon
-          size="4x"
+          size="3x"
           id="slide"
           type="button"
           onClick={scrollRight}
           fas
           icon="angle-right"
+          style={{ zIndex: "1"}}
         />
       </Container>
 
-      <h2 className="mt-2">Trending TV</h2>
+      <h2 className="mt-5">Trending TV</h2>
       <Container
         fluid
-        className="overflow-auto bg-powder-blue mb-2 horizontalrow d-flex align-items-center justify-content-center"
+        className="overflow-auto mb-2 horizontalrow d-flex align-items-center justify-content-center"
       >
         <MDBIcon
-          style={{ zIndex: "1" }}
+          style={{ zIndex: "1"}}
           size="4x"
           id="slide"
           type="button"
@@ -109,7 +112,7 @@ const Home = () => {
         <Row className="flex-nowrap mt-2 mb-2 scorri" id="riga2">
           {trendingTv.map((element) => (
             <Col key={element.id}>
-              <Image src={element.img} style={{ width: "200px" }} />{" "}
+              <GuardaFilm2 img={element.img} nome={element.title}/>
               <p className="text-center mt-2 text-title">{element.title}</p>
             </Col>
           ))}
@@ -121,6 +124,7 @@ const Home = () => {
           onClick={scrollRight1}
           fas
           icon="angle-right"
+          style={{ zIndex: "1"}}
         />
       </Container>
 
