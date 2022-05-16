@@ -33,8 +33,13 @@ const Horizontal = () => {
       });
   }, []);
 
-  const scroll = () => {
-    document.getElementById('container').scrollLeft += 20;
+  const scrollRight = () => {
+    document.getElementById('container').scrollLeft += 1000;
+  }
+
+  
+  const scrollLeft = () => {
+    document.getElementById('container').scrollLeft -= 1000;
   }
 
 
@@ -75,16 +80,19 @@ const Horizontal = () => {
           ))}
         </Row>
       </Container>
-
+      <Container fluid className="overflow-auto bg-row-1 horizontalrow">
       <Row className="flex-nowrap mt-2 mb-2" id="container">
         {filmsTrending.map((element) => (
             <Col id="content" key={element.id}>
               <Image src={element.img} style={{ width: "300px" }} />{" "}
             </Col>
           ))}
-</Row>
+      </Row>
+      </Container>
 
-<button id="slide" type="button" onClick={scroll}>Slide right</button>
+<button id="slide" type="button" onClick={scrollRight}>Slide right</button>
+<button id="slide" type="button" onClick={scrollLeft}>Slide left</button>
+
     </>
   );
 };
