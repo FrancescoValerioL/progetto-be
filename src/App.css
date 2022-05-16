@@ -10,7 +10,12 @@ body {
 
 .bg-powder-blue{
   background-color: #BBE6E4;
-  color: #EBEBEB;
+  color: #585563;
+}
+
+.bg-cornflower-blue{
+  background-color: #658FFB;
+  color: #585563;
 }
 
 .img-resized {
@@ -208,6 +213,16 @@ Alternativa F9F9ED */
   color: #404040;
 }
 
+.text-center{
+width: 100%;
+text-align: center;
+}
+
+.text-title{
+  font-size: large;
+  font-weight: bold;
+}
+
 
 @media screen and (max-width: 992px) {
   #box2{
@@ -280,12 +295,14 @@ Alternativa F9F9ED */
 
 
 
-#container  {
+.scorri  {
   width: 100%;
   overflow-x: scroll; 
   scroll-behavior: smooth;
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
 }
 
-#container::-webkit-scrollbar  {
+.scorri::-webkit-scrollbar  {
 display: none;
 }
