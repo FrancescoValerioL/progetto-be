@@ -8,6 +8,7 @@ import Home2 from "./pages/Home2";
 import Horizontal from "./pages/Horizontal";
 import RicercaPerGenere from "./pages/Ricerca";
 import RicercaPerTitolo from "./pages/RicercaPerTitolo";
+import ProfileSelection from "./pages/ProfileSelection";
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
         <Route path="/horizontal" element={<Horizontal />} />
         <Route path="/ricercaPerGenere" element={<RicercaPerGenere />} />
         <Route path="/ricercaPerTitolo" element={<RicercaPerTitolo />} />
+        <Route path="/ProfileSelection" element={<ProfileSelection />} />
+
       </Routes>
     </BrowserRouter>
   );
