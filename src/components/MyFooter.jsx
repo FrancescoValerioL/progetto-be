@@ -9,7 +9,7 @@ import {
 
 const MyFooter = () => {
   return (
-    <MDBFooter className='text-center text-white' style={{ backgroundColor: '#658ffb' }}>
+    <MDBFooter className='text-center text-white bg-platinum'>
       <MDBContainer className='pt-4'>
         <section className='mb-4'>
           <a
@@ -68,9 +68,9 @@ const MyFooter = () => {
         </section>
       </MDBContainer>
 
-      <div className='text-center text-dark p-3' style={{ backgroundColor: 'white' }}>
+      <div className='text-center bg-platinum p-3'>
         © 2020 Copyright:
-        <a className='text-dark' href='https://mdbootstrap.com/'>
+        <a className='bg-platinum' href='https://mdbootstrap.com/'>
           BE stream
         </a>
       </div>

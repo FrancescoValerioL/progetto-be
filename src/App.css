@@ -1,5 +1,16 @@
 body {
   font-family: Roboto, Helvetica, Arial, sans-serif;
+  background-color: #EBEBEB;
+}
+
+.bg-platinum{
+  background-color: #EBEBEB;
+  color: #585563;
+}
+
+.bg-powder-blue{
+  background-color: #BBE6E4;
+  color: #EBEBEB;
 }
 
 .img-resized {
@@ -75,19 +86,17 @@ Alternativa F9F9ED */
 
 
 .shadowActive {
-  box-shadow: 0 0px 15px 2px #5450d5;
-  transition: box-shadow 1s;
-  background-color: white;
+  box-shadow: 0 0px 15px 2px #658FFB;
+  transition: box-shadow 0.5s;
 }
 
 .shadowOff {
-  box-shadow: 0 0px 0px 0px white;
-  transition: box-shadow 1s;
-  background-color: white;
+  box-shadow: 0 0px 0px 0px #EBEBEB;
+  transition: box-shadow 0.5s;
 }
 
 .myButton {
-  background-color: white;
+  background-color: #EBEBEB;
   color: #658ffb;
   border: 2px solid #658ffb;
   border-radius: 15px;
@@ -101,15 +110,15 @@ Alternativa F9F9ED */
 
 .myButton:hover {
   background-color: #658ffb;
-  color: white;
+  color: #EBEBEB;
   border: 2px solid #658ffb;
   transition: background-color 0.5s;
 }
 
 .myButton2 {
   background-color: transparent;
-  color: white;
-  border: 2px solid white;
+  color: #EBEBEB;
+  border: 2px solid #EBEBEB;
   border-radius: 15px;
   padding: 10px;
   padding-left: 20px;
@@ -123,9 +132,9 @@ Alternativa F9F9ED */
 }
 
 .myButton2:hover {
-  background-color: white;
+  background-color: #EBEBEB;
   color: #658ffb;
-  border: 2px solid white;
+  border: 2px solid #EBEBEB;
   transition: background-color 0.5s;
 }
 
@@ -134,7 +143,7 @@ Alternativa F9F9ED */
 }
 
 #box1 {
-  background-color: #658ffb;
+  background-color: #658FFB;
   width: 500px;
   height: 400px;
   position: relative;
@@ -144,7 +153,7 @@ Alternativa F9F9ED */
   border-radius: 50%;
 }
 #box2 {
-  background-color: #b3d6ff;
+  background-color: #BBE6E4;
   width: 600px;
   height: 400px;
   transform: rotate(-10deg);
@@ -157,18 +166,20 @@ Alternativa F9F9ED */
   left: 70px;
   width: 70%;
   font-size: 50px;
-  color: white;
+  color: #EBEBEB;
 }
 
 .textLanding{
   width: 80%;
   text-align: right;
+  color: #585563;
 
 }
 
 .textLanding1{
   width: 80%;
   text-align: left;
+  color: #585563;
 }
 
 .titoloSlider{

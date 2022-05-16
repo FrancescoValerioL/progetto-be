@@ -19,8 +19,8 @@ const Landing = () => {
   return (
     <>
       <Container>
-        <Row className="mt-5 d-flex align-items-center justify-content-center">
-          <Col md={8} className="d-flex justify-content-center mt-2">
+        <Row className="mt-5 d-flex align-items-center justify-content-center bg-platinum">
+          <Col md={8} className="d-flex justify-content-center mt-2 ">
             <div id="box2">
               <div id="box1">
                 <h3 id="title1">Film, serie TV e tanto altro. Senza limiti.</h3>

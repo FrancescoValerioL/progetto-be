@@ -35,9 +35,8 @@ const NavbarHome = () => {
   return (
     <>
       <Navbar
-        bg="light"
         expand="xl"
-        className={nav ? "shadowActive" : "shadowOff"}
+        className={nav ? "shadowActive bg-platinum" : "shadowOff bg-platinum"}
         sticky="top"
       >
         <Container className="mt-2">
