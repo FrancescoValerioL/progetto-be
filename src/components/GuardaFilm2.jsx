@@ -39,17 +39,17 @@ const GuardaFilm2 = (props) => {
       </MDBBtn>
       <Modal size="xl" show={show} onHide={handleClose}>
         <Modal.Header
-          style={{ backgroundColor: "#658ffb", color: "white" }}
+          className="bg-cornflower-blue-reverse"
           closeButton
         >
-          <Modal.Title>{props.nome}</Modal.Title>
+          <Modal.Title className="Lato-title textCenter">{props.nome}</Modal.Title>
         </Modal.Header>
-        <Modal.Body style={{ backgroundColor: "#b3d6ff" }}>
+        <Modal.Body className="bg-platinum">
           <Row className="mt-3 d-flex align-items-center justify-content-center">
             <ReactPlayer url={trailer} controls="true" />
           </Row>
           <Row className="mt-5 d-flex align-items-center justify-content-center">
-            <p className="textPlayVideo">{props.text}</p>
+            <p className="textPlayVideo descrizionePlayer">{props.text}</p>
           </Row>
         </Modal.Body>
       </Modal>

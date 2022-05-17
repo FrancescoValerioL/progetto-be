@@ -18,6 +18,11 @@ body {
   color: #585563;
 }
 
+.bg-cornflower-blue-reverse {
+  background-color: #ebebeb;
+  color: #658ffb;
+}
+
 .bg-text-dark-liver{
   color: #585563
 }
@@ -219,9 +224,9 @@ Alternativa F9F9ED */
 }
 
 .textPlayVideo {
-  width: 80%;
+  width: 70%;
   text-align: center;
-  color: #404040;
+  font-family: 'Lato', sans-serif;
 }
 
 .text-center {
@@ -370,3 +375,9 @@ Alternativa F9F9ED */
   padding: 5px;
 }
 
+
+.Lato-title{
+  font-family: 'Lato', sans-serif;
+  font-weight: 300;
+  font-size: 35px;
+}
