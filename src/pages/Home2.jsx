@@ -108,7 +108,7 @@ const Home = () => {
     <>
       <NavbarHome />
       <SliderHome />
-      <h2 className="bg-text-dark-liver title-riga">Trending Movie</h2>
+      <h2 className="bg-text-dark-liver title-riga marginTitoloRigaSmartphone">Trending Movie</h2>
       <Container
         fluid
         className="overflow-auto horizontalrow d-flex align-items-center justify-content-center"

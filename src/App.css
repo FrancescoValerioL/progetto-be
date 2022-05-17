@@ -291,6 +291,10 @@ Alternativa F9F9ED */
     width: 100%;
     text-align: center;
   }
+
+  .textPlayVideo{
+    width: 80%;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -299,7 +303,40 @@ Alternativa F9F9ED */
   display: none;
 }
 
+.textPlayVideo{
+  width: 95%;
+}
 
+.carousel-indicators{
+  display: none;
+}
+
+.titoloSlider {
+  font-size: 25px;
+  color: #658ffb;
+  background-color: #ebebeb;
+  font-weight: 200;
+  position: relative;
+  top: -50px;
+}
+
+.marginTitoloRigaSmartphone{
+  margin-top: -50px !important;
+}
+
+.posizioneButtonSmartphone{
+  position: relative;
+  top: -10px;
+}
+
+.drk:after {
+  opacity: 0;
+}
+
+.side-crop {
+  height: 1000px;
+  overflow: hidden;
+}
 
 }
 

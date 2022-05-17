@@ -26,9 +26,9 @@ const SliderHome = () => {
         <Carousel fade>
           {films.map((el) => (
             <Carousel.Item key={el.id} interval={1000}>
-              <div className="drk side-crop">
+              <div className="drk side-crop imgSlider">
                 <img
-                  className="d-block w-100"
+                  className="d-block w-100 "
                   src={el.backdrop_img}
                   alt="First slide"
                 />

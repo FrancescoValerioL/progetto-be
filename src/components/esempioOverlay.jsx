@@ -26,7 +26,7 @@ const GuardaFilm = (props) => {
 
   return (
     <>
-      <MDBBtn onClick={handleButtonClick} className="myButton" value={props.id}>
+      <MDBBtn onClick={handleButtonClick} className="myButton posizioneButtonSmartphone" value={props.id}>
         Guarda
       </MDBBtn>
       <Modal size="xl" show={show} onHide={handleClose}>
