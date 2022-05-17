@@ -30,7 +30,7 @@ const GuardaFilm2 = (props) => {
   return (
     <>
       <MDBBtn
-        className="imgRigaHover bg-powder-blue"
+        className="buttonRiga"
         onClick={(e) => handleButtonClick(e)}
         value={props.id}
       >
