@@ -49,7 +49,7 @@ const GuardaFilm2 = (props) => {
             <ReactPlayer url={trailer} controls="true" />
           </Row>
           <Row className="mt-5 d-flex align-items-center justify-content-center">
-            <p className="textPlayVideo descrizionePlayer">{props.text}</p>
+            <p className="textPlayVideo">{props.text}</p>
           </Row>
         </Modal.Body>
       </Modal>
