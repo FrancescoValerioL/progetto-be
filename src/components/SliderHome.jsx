@@ -2,37 +2,23 @@ import { MDBBtn } from "mdb-react-ui-kit";
 import { Carousel, Container } from "react-bootstrap";
 import GuardaFilm from "./esempioOverlay";
 import { useState, useEffect } from "react";
+import { topRated } from "../scripts/movie";
 import axios from "axios";
+import { selectVideo } from "../scripts/selectVideo";
 
 const SliderHome = () => {
   let [films, setFilms] = useState([]);
-  let [video, setVideo] = useState("");
+  let [video, setVideo] = useState([]);
 
   useEffect(() => {
-    films = [];
-    axios
-      .get(`http://localhost:2000/api/movie/topRated`)
-      .then(function (response) {
-        console.log(response.data);
-        setFilms(response.data);
-        console.log(films);
-      });
+    asyncCall();
   }, []);
 
-  const Video = (movie_id) => {
-    axios
-      .get(`https://api.themoviedb.org/3/movie/${movie_id}/videos`, {
-        params: {
-          apy_key: "205712c8b4bad38dc18a8f9c83c0f88e",
-          language: "it-IT",
-        },
-      })
-      .then(function (response) {
-        console.log(response.data);
-        setFilms(response.data);
-        console.log(films);
-      });
-  };
+  async function asyncCall() {
+    console.log("calling");
+    const result = await topRated();
+    setFilms(result);
+  }
 
   return films.length != 0 ? (
     <>
@@ -49,7 +35,7 @@ const SliderHome = () => {
               </div>
               <Carousel.Caption className="mb-5">
                 <h5 className="titoloSlider">{el.title}</h5>
-                <GuardaFilm nome={el.title} video={el.img} text={el.title} />
+                <GuardaFilm nome={el.title} id={el.id} text={el.title} />
               </Carousel.Caption>
             </Carousel.Item>
           ))}
