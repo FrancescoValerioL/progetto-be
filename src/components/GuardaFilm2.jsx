@@ -2,6 +2,7 @@ import { MDBBtn } from "mdb-react-ui-kit";
 import { useState } from "react";
 import { Card, Modal, Row, Image } from "react-bootstrap";
 import { selectVideo } from "../scripts/selectVideo";
+import ReactPlayer from "react-player";
 
 const GuardaFilm2 = (props) => {
   const [show, setShow] = useState(false);
@@ -45,12 +46,7 @@ const GuardaFilm2 = (props) => {
         </Modal.Header>
         <Modal.Body style={{ backgroundColor: "#b3d6ff" }}>
           <Row className="mt-3 d-flex align-items-center justify-content-center">
-            <iframe
-              width="560"
-              height="315"
-              src={trailer}
-              title={props.nome}
-            ></iframe>
+            <ReactPlayer url={trailer} controls="true" />
           </Row>
           <Row className="mt-5 d-flex align-items-center justify-content-center">
             <p className="textPlayVideo">{props.text}</p>
