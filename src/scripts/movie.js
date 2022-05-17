@@ -33,5 +33,26 @@ function topRated() {
       });
   });
 }
+function ricercaPerGenereMovie(genre) {
+  return new Promise((resolve) => {
+    let series = [];
+    const selectedPage = 1;
+    const selectedGenre = genre;
+    axios
+      .get(`http://localhost:2000/api/tv/ricercaperGenere`, {
+        params: {
+          page: selectedPage,
+          genre: selectedGenre,
+        },
+      })
+      .then(function (response) {
+        series = response.data.map((elem) => elem);
+        resolve(series);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  });
+}
 
-export { trendingWeek, topRated };
+export { trendingWeek, topRated, ricercaPerGenereMovie };
