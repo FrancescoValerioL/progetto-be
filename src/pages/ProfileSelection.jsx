@@ -92,7 +92,7 @@ const ProfileSelection = () => {
             {profili.length >= 0 ? (
               profili.map((el) => (
                 <Col md={3} style={{ padding: "20px" }}>
-                  <a>
+                  <a href="/home">
                     <Image src={el.img} style={{ width: "100%" }} />
                   </a>
                   <h3 className="textCenter mt-3">{el.nome}</h3>

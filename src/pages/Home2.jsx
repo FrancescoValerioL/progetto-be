@@ -73,35 +73,35 @@ const Home = () => {
   };
 
   const scrollRight1 = () => {
-    document.getElementById("riga2").scrollLeft += 1000;
+    document.getElementById("riga2").scrollLeft += 900;
   };
 
   const scrollLeft1 = () => {
-    document.getElementById("riga2").scrollLeft -= 1000;
+    document.getElementById("riga2").scrollLeft -= 900;
   };
 
   const scrollRight2 = () => {
-    document.getElementById("riga3").scrollLeft += 1000;
+    document.getElementById("riga3").scrollLeft += 900;
   };
 
   const scrollLeft2 = () => {
-    document.getElementById("riga3").scrollLeft -= 1000;
+    document.getElementById("riga3").scrollLeft -= 900;
   };
   
   const scrollRight3 = () => {
-    document.getElementById("riga4").scrollLeft += 1000;
+    document.getElementById("riga4").scrollLeft += 900;
   };
 
   const scrollLeft3 = () => {
-    document.getElementById("riga4").scrollLeft -= 1000;
+    document.getElementById("riga4").scrollLeft -= 900;
   };
 
   const scrollRight4 = () => {
-    document.getElementById("riga5").scrollLeft += 1000;
+    document.getElementById("riga5").scrollLeft += 900;
   };
 
   const scrollLeft4 = () => {
-    document.getElementById("riga5").scrollLeft -= 1000;
+    document.getElementById("riga5").scrollLeft -= 900;
   };
 
   return (

@@ -21,7 +21,7 @@ const MyNav = () => {
             <img alt="" src={logo} width="180" />
           </Navbar.Brand>
           <Stack direction="horizontal" gap={4}>
-            <MDBBtn className="ms-auto myButton" href="/home">
+            <MDBBtn className="ms-auto myButton" href="/ProfileSelection">
               Accedi
             </MDBBtn>
           </Stack>
