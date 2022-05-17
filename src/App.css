@@ -346,3 +346,8 @@ Alternativa F9F9ED */
   opacity: 100%;
   transform: scale(1.4);
 }
+
+.textCenter{
+  width: 100%;
+  text-align: center;
+}
