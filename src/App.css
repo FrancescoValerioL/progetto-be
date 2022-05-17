@@ -355,3 +355,18 @@ Alternativa F9F9ED */
   width: 100%;
   text-align: center;
 }
+
+.modale{
+  color: #585563;
+  font-family: 'Helvetica Neue', sans-serif;
+}
+
+
+.icon-scegli-profilo{
+  background-color: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 50%;
+  padding: 5px;
+}
+

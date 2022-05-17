@@ -21,11 +21,16 @@ const ProfileSelection = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const [profili, setProfili] = useState([]);
+  const [profili, setProfili] = useState([
+    {
+      nome: "Profilo 1",
+      genere: "Fantascienza",
+      img: icon1,
+    },
+  ]);
   const [nome, setNome] = useState("");
   const [genere, setGenere] = useState("");
   const [img, setImg] = useState("");
-
 
   const changeNome = (event) => {
     setNome(event.target.value);
@@ -65,17 +70,19 @@ const ProfileSelection = () => {
     profili.push({
       nome: nome,
       genere: genere,
-      img: img
-    })
-    handleClose()
+      img: img,
+    });
+    handleClose();
   };
 
   return (
     <>
       {console.log(profili)}
-      <Container className="mt-5 ">
+      <Container className="mt-5 modale">
         <Row>
-          <h1 className="textCenter mt-5">Scegli il tuo profilo</h1>
+          <h1 style={{ fontWeight: "300" }} className="textCenter mt-5">
+            Chi vuole guardare?
+          </h1>
         </Row>
         <Row className="d-flex justify-content-center bd-highlight col-example mt-3">
           <Row
@@ -84,15 +91,12 @@ const ProfileSelection = () => {
           >
             {profili.length >= 0 ? (
               profili.map((el) => (
-                <Col style={{ padding: "20px" }}>
+                <Col md={3} style={{ padding: "20px" }}>
                   <a>
-                    <Image
-                      src={el.img}
-                      style={{ width: "100%" }}
-                    />
+                    <Image src={el.img} style={{ width: "100%" }} />
                   </a>
-                  <h5 className="textCenter mt-3">{el.nome}</h5>
-                  <h3 className="textCenter mt-3">{el.genere}</h3>
+                  <h3 className="textCenter mt-3">{el.nome}</h3>
+                  <p className="textCenter mt-3">{el.genere}</p>
                 </Col>
               ))
             ) : (
@@ -101,11 +105,11 @@ const ProfileSelection = () => {
             <Col md={3} style={{ padding: "20px" }}>
               <a onClick={handleShow}>
                 <Image
-                  src="https://cdn-icons-png.flaticon.com/512/1828/1828919.png"
+                  src="https://cdn-icons-png.flaticon.com/512/1057/1057240.png"
                   style={{ width: "100%" }}
                 />
               </a>
-              <h5 className="textCenter mt-3">Crea nuovo</h5>
+              <h3 className="textCenter mt-3">Aggiungi</h3>
             </Col>
           </Row>
         </Row>
@@ -113,7 +117,7 @@ const ProfileSelection = () => {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title className="textCenter">Crea il profilo</Modal.Title>
+          <Modal.Title style={{color: '#658ffb'}} className="textCenter">Aggiungi un profilo</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -123,8 +127,14 @@ const ProfileSelection = () => {
               placeholder="Nome"
               onChange={changeNome}
             />
-            <Form.Label className="mt-3">Scegli il genere che preferisci</Form.Label>
-            <DropdownButton id="dropdown-basic-button" title="Scegli">
+            <Form.Label className="mt-3">
+              Scegli il genere che preferisci
+            </Form.Label>
+            <DropdownButton
+              variant="primary"
+              id="dropdown-basic-button"
+              title={genere}
+            >
               <Dropdown.Item onClick={setAzione}>Azione</Dropdown.Item>
               <Dropdown.Item onClick={setCommedia}>Commedia</Dropdown.Item>
               <Dropdown.Item onClick={setFantasy}>Fantasy</Dropdown.Item>
@@ -136,14 +146,30 @@ const ProfileSelection = () => {
             </DropdownButton>
           </Form.Group>
           <Form.Label className="mt-3">Scegli un icona</Form.Label>
-          <Row className="mt-3 d-flex align-items-center justify-content-center">
-          <Row style={{width:'90%'}}>
-            <Col><a onClick={setIcon1}><img style={{width: '60px'}} src={icon1} alt="icon1" /></a></Col>
-            <Col><a onClick={setIcon2}><img style={{width: '60px'}} src={icon2} alt="icon1" /></a></Col>
-            <Col><a onClick={setIcon3}><img style={{width: '60px'}} src={icon3} alt="icon1" /></a></Col>
-            <Col><a onClick={setIcon4}><img style={{width: '60px'}} src={icon4} alt="icon1" /></a></Col>
-         </Row> 
-         </Row>
+          <Row className="mt-3 mb-3 d-flex align-items-center justify-content-center">
+            <Row style={{ width: "90%" }}>
+              <Col>
+                <MDBBtn className="icon-scegli-profilo myButton" onClick={setIcon1}>
+                  <img style={{ width: "60px" }} src={icon1} alt="icon1" />
+                </MDBBtn>
+              </Col>
+              <Col>
+                <MDBBtn className="icon-scegli-profilo myButton" onClick={setIcon2}>
+                  <img style={{ width: "60px" }} src={icon2} alt="icon1" />
+                </MDBBtn>
+              </Col>
+              <Col>
+                <MDBBtn className="icon-scegli-profilo myButton" onClick={setIcon3}>
+                  <img style={{ width: "60px" }} src={icon3} alt="icon1" />
+                </MDBBtn>
+              </Col>
+              <Col>
+                <MDBBtn className="icon-scegli-profilo myButton" onClick={setIcon4}>
+                  <img style={{ width: "60px" }} src={icon4} alt="icon1" />
+                </MDBBtn>
+              </Col>
+            </Row>
+          </Row>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={addProfile}>

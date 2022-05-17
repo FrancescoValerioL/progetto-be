@@ -41,7 +41,7 @@ const Landing = () => {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title style={{ color: "#658ffb" }}>
+          <Modal.Title className="modale" style={{ color: "#658ffb" }}>
             Registrati:
           </Modal.Title>
         </Modal.Header>
@@ -72,7 +72,7 @@ const Landing = () => {
             </MDBBtn>
 
           </Form>
-          <h5 className="mt-4 mb-3" style={{color: '#658ffb'}}>Oppure registrati con:</h5>
+          <h5 className="mt-4 mb-3 modale">Oppure registrati con:</h5>
           <hr/>
         <MDBBtn className='m-1 mb-4' style={{ backgroundColor: '#dd4b39'}} href='#'>
         <MDBIcon fab icon='google' />
