@@ -80,6 +80,30 @@ const Home = () => {
     document.getElementById("riga2").scrollLeft -= 1000;
   };
 
+  const scrollRight2 = () => {
+    document.getElementById("riga3").scrollLeft += 1000;
+  };
+
+  const scrollLeft2 = () => {
+    document.getElementById("riga3").scrollLeft -= 1000;
+  };
+  
+  const scrollRight3 = () => {
+    document.getElementById("riga4").scrollLeft += 1000;
+  };
+
+  const scrollLeft3 = () => {
+    document.getElementById("riga4").scrollLeft -= 1000;
+  };
+
+  const scrollRight4 = () => {
+    document.getElementById("riga5").scrollLeft += 1000;
+  };
+
+  const scrollLeft4 = () => {
+    document.getElementById("riga5").scrollLeft -= 1000;
+  };
+
   return (
     <>
       <NavbarHome />
@@ -143,7 +167,7 @@ const Home = () => {
           fas
           icon="angle-left"
         />
-        <Row className="flex-nowrap mt-2 mb-2 scorri" id="riga2">
+        <Row className="flex-nowrap scorri d-flex align-items-center" style={{ height: "330px" }} id="riga2">
           {trendingTv != undefined ? (
             trendingTv.map((element) => (
               <Col id="content" key={element.id}>
@@ -180,11 +204,11 @@ const Home = () => {
           size="3x"
           id="slide"
           type="button"
-          onClick={scrollLeft1}
+          onClick={scrollLeft2}
           fas
           icon="angle-left"
         />
-        <Row className="flex-nowrap mt-2 mb-2 scorri" id="riga2">
+        <Row className="flex-nowrap scorri d-flex align-items-center" style={{ height: "330px" }} id="riga3">
           {genreAction != undefined ? (
             genreAction.map((element) => (
               <Col id="content" key={element.id}>
@@ -204,7 +228,7 @@ const Home = () => {
           size="3x"
           id="slide"
           type="button"
-          onClick={scrollRight1}
+          onClick={scrollRight2}
           fas
           icon="angle-right"
           style={{ zIndex: "1" }}
@@ -221,11 +245,11 @@ const Home = () => {
           size="3x"
           id="slide"
           type="button"
-          onClick={scrollLeft1}
+          onClick={scrollLeft3}
           fas
           icon="angle-left"
         />
-        <Row className="flex-nowrap mt-2 mb-2 scorri" id="riga2">
+        <Row className="flex-nowrap scorri d-flex align-items-center" style={{ height: "330px" }} id="riga4">
           {genreSciFi != undefined ? (
             genreSciFi.map((element) => (
               <Col id="content" key={element.id}>
@@ -245,7 +269,7 @@ const Home = () => {
           size="3x"
           id="slide"
           type="button"
-          onClick={scrollRight1}
+          onClick={scrollRight3}
           fas
           icon="angle-right"
           style={{ zIndex: "1" }}
@@ -262,11 +286,11 @@ const Home = () => {
           size="3x"
           id="slide"
           type="button"
-          onClick={scrollLeft1}
+          onClick={scrollLeft4}
           fas
           icon="angle-left"
         />
-        <Row className="flex-nowrap mt-2 mb-2 scorri" id="riga2">
+        <Row className="flex-nowrap scorri d-flex align-items-center" style={{ height: "330px" }} id="riga5">
           {genreCommedia != undefined ? (
             genreCommedia.map((element) => (
               <Col id="content" key={element.id}>
@@ -286,7 +310,7 @@ const Home = () => {
           size="3x"
           id="slide"
           type="button"
-          onClick={scrollRight1}
+          onClick={scrollRight4}
           fas
           icon="angle-right"
           style={{ zIndex: "1" }}
