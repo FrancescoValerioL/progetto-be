@@ -324,7 +324,7 @@ Alternativa F9F9ED */
 }
 
 .imgRigaHover :hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
   z-index: 5;
   padding: 0%;
 }

@@ -8,6 +8,7 @@ function trendingWeek() {
       .then(function (response) {
         films = response.data.map((elem) => elem);
         console.log(films);
+        resolve(films);
       })
       .catch(function (error) {
         // handle error
