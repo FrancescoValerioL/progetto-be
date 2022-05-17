@@ -11,7 +11,10 @@ import {
   Dropdown,
 } from "react-bootstrap";
 import { MDBBtn } from "mdb-react-ui-kit";
-
+import icon1 from "./sceltaProfilo/icon1.png";
+import icon2 from "./sceltaProfilo/icon2.png";
+import icon3 from "./sceltaProfilo/icon3.png";
+import icon4 from "./sceltaProfilo/icon4.png";
 
 const ProfileSelection = () => {
   const [show, setShow] = useState(false);
@@ -21,6 +24,8 @@ const ProfileSelection = () => {
   const [profili, setProfili] = useState([]);
   const [nome, setNome] = useState("");
   const [genere, setGenere] = useState("");
+  const [img, setImg] = useState("");
+
 
   const changeNome = (event) => {
     setNome(event.target.value);
@@ -43,11 +48,24 @@ const ProfileSelection = () => {
   const setHorror = () => {
     setGenere("Horror");
   };
+  const setIcon1 = () => {
+    setImg(icon1);
+  };
+  const setIcon2 = () => {
+    setImg(icon2);
+  };
+  const setIcon3 = () => {
+    setImg(icon3);
+  };
+  const setIcon4 = () => {
+    setImg(icon4);
+  };
 
   const addProfile = () => {
     profili.push({
       nome: nome,
       genere: genere,
+      img: img
     })
     handleClose()
   };
@@ -69,7 +87,7 @@ const ProfileSelection = () => {
                 <Col style={{ padding: "20px" }}>
                   <a>
                     <Image
-                      src="https://ih0.redbubble.net/image.618427277.3222/flat,1000x1000,075,f.u2.jpg"
+                      src={el.img}
                       style={{ width: "100%" }}
                     />
                   </a>
@@ -117,6 +135,15 @@ const ProfileSelection = () => {
               <Dropdown.Item onClick={setHorror}>Horror</Dropdown.Item>
             </DropdownButton>
           </Form.Group>
+          <Form.Label className="mt-3">Scegli un icona</Form.Label>
+          <Row className="mt-3 d-flex align-items-center justify-content-center">
+          <Row style={{width:'90%'}}>
+            <Col><a onClick={setIcon1}><img style={{width: '60px'}} src={icon1} alt="icon1" /></a></Col>
+            <Col><a onClick={setIcon2}><img style={{width: '60px'}} src={icon2} alt="icon1" /></a></Col>
+            <Col><a onClick={setIcon3}><img style={{width: '60px'}} src={icon3} alt="icon1" /></a></Col>
+            <Col><a onClick={setIcon4}><img style={{width: '60px'}} src={icon4} alt="icon1" /></a></Col>
+         </Row> 
+         </Row>
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={addProfile}>
