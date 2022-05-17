@@ -2,40 +2,42 @@ import React from "react";
 import NavbarHome from "../components/NavbarHome";
 import { Container, Row, Col, Image } from "react-bootstrap";
 import { useState, useEffect } from "react";
-import { topRated } from "../scripts/movie";
+import { topRated, trendingWeek } from "../scripts/movie";
+import { trendingWeekTV } from "../scripts/tv";
 import SliderHome from "../components/SliderHome";
 import MyFooter from "../components/MyFooter";
 import axios from "axios";
 import { MDBIcon } from "mdb-react-ui-kit";
 import GuardaFilm2 from "../components/GuardaFilm2";
 
-
 const Home = () => {
   let [filmsTop, setFilms] = useState([]);
   let [filmsTrending, setTrending] = useState([]);
   let [trendingTv, setTrendingTv] = useState([]);
 
-  async function asyncCall() {
+  async function asyncCallTopRated() {
     console.log("calling");
     const result = await topRated();
     setFilms(result);
+    console.log(result);
+  }
+  async function asyncCallTrendingWeek() {
+    console.log("calling");
+    const result = await trendingWeek();
+    setTrending(result);
+    console.log(result);
+  }
+  async function asyncCallTrendingTV() {
+    console.log("calling");
+    const result = await trendingWeekTV();
+    setTrendingTv(result);
+    console.log(result);
   }
 
   useEffect(() => {
-    asyncCall();
-  }, []);
-
-  useEffect(() => {
-    axios
-      .get(`http://localhost:2000/api/movie/trendingWeek`)
-      .then(function (response) {
-        setTrending(response.data);
-      });
-    axios
-      .get(`http://localhost:2000/api/tv/trendingWeek`)
-      .then(function (response) {
-        setTrendingTv(response.data);
-      });
+    asyncCallTopRated();
+    asyncCallTrendingTV();
+    asyncCallTrendingWeek();
   }, []);
 
   const scrollRight = () => {
@@ -63,9 +65,8 @@ const Home = () => {
         fluid
         className="overflow-auto horizontalrow d-flex align-items-center justify-content-center"
       >
-        
         <MDBIcon
-          style={{ zIndex: "1"}}
+          style={{ zIndex: "1" }}
           size="3x"
           id="slide"
           type="button"
@@ -73,11 +74,19 @@ const Home = () => {
           fas
           icon="angle-left"
         />
-        <Row className="flex-nowrap scorri d-flex align-items-center" style={{height: '330px'}} id="riga1">
+        <Row
+          className="flex-nowrap scorri d-flex align-items-center"
+          style={{ height: "330px" }}
+          id="riga1"
+        >
           {filmsTop != undefined ? (
             filmsTrending.map((element) => (
               <Col id="content" key={element.id}>
-                <GuardaFilm2 img={element.img} nome={element.title}/>
+                <GuardaFilm2
+                  img={element.img}
+                  nome={element.title}
+                  id={element.id}
+                />
               </Col>
             ))
           ) : (
@@ -91,7 +100,7 @@ const Home = () => {
           onClick={scrollRight}
           fas
           icon="angle-right"
-          style={{ zIndex: "1"}}
+          style={{ zIndex: "1" }}
         />
       </Container>
 
@@ -101,7 +110,7 @@ const Home = () => {
         className="overflow-auto mb-2 horizontalrow d-flex align-items-center justify-content-center"
       >
         <MDBIcon
-          style={{ zIndex: "1"}}
+          style={{ zIndex: "1" }}
           size="4x"
           id="slide"
           type="button"
@@ -111,9 +120,12 @@ const Home = () => {
         />
         <Row className="flex-nowrap mt-2 mb-2 scorri" id="riga2">
           {trendingTv.map((element) => (
-            <Col key={element.id}>
-              <GuardaFilm2 img={element.img} nome={element.title}/>
-              <p className="text-center mt-2 text-title">{element.title}</p>
+            <Col id="content" key={element.id}>
+              <GuardaFilm2
+                img={element.img}
+                nome={element.title}
+                id={element.id}
+              />
             </Col>
           ))}
         </Row>
@@ -124,7 +136,7 @@ const Home = () => {
           onClick={scrollRight1}
           fas
           icon="angle-right"
-          style={{ zIndex: "1"}}
+          style={{ zIndex: "1" }}
         />
       </Container>
 
