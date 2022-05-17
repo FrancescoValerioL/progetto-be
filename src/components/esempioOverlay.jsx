@@ -45,7 +45,7 @@ const GuardaFilm = (props) => {
             ></iframe>
           </Row>
           <Row className="mt-5 d-flex align-items-center justify-content-center">
-            <p className="textPlayVideo">{trailer}</p>
+            <p className="textPlayVideo">{props.text}</p>
           </Row>
         </Modal.Body>
       </Modal>

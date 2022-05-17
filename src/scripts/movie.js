@@ -7,7 +7,6 @@ function trendingWeek() {
       .get(`http://localhost:2000/api/movie/trendingWeek`)
       .then(function (response) {
         films = response.data.map((elem) => elem);
-        console.log(films);
         resolve(films);
       })
       .catch(function (error) {
@@ -39,7 +38,7 @@ function ricercaPerGenereMovie(genre) {
     const selectedPage = 1;
     const selectedGenre = genre;
     axios
-      .get(`http://localhost:2000/api/tv/ricercaperGenere`, {
+      .get(`http://localhost:2000/api/movie/ricercaperGenere`, {
         params: {
           page: selectedPage,
           genre: selectedGenre,

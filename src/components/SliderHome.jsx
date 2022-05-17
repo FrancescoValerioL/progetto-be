@@ -35,7 +35,7 @@ const SliderHome = () => {
               </div>
               <Carousel.Caption className="mb-5">
                 <h5 className="titoloSlider">{el.title}</h5>
-                <GuardaFilm nome={el.title} id={el.id} text={el.title} />
+                <GuardaFilm nome={el.title} id={el.id} text={el.desc} />
               </Carousel.Caption>
             </Carousel.Item>
           ))}

@@ -2,7 +2,11 @@ import React from "react";
 import NavbarHome from "../components/NavbarHome";
 import { Container, Row, Col, Image } from "react-bootstrap";
 import { useState, useEffect } from "react";
-import { topRated, trendingWeek } from "../scripts/movie";
+import {
+  ricercaPerGenereMovie,
+  topRated,
+  trendingWeek,
+} from "../scripts/movie";
 import { trendingWeekTV } from "../scripts/tv";
 import SliderHome from "../components/SliderHome";
 import MyFooter from "../components/MyFooter";
@@ -14,30 +18,50 @@ const Home = () => {
   let [filmsTop, setFilms] = useState([]);
   let [filmsTrending, setTrending] = useState([]);
   let [trendingTv, setTrendingTv] = useState([]);
+  let [genreAction, setGenreAction] = useState([]);
+  let [genreSciFi, setGenreSciFi] = useState([]);
+  let [genreCommedia, setGenreCommedia] = useState([]);
 
   async function asyncCallTopRated() {
     console.log("calling");
     const result = await topRated();
     setFilms(result);
-    console.log(result);
   }
   async function asyncCallTrendingWeek() {
     console.log("calling");
     const result = await trendingWeek();
     setTrending(result);
-    console.log(result);
   }
   async function asyncCallTrendingTV() {
     console.log("calling");
     const result = await trendingWeekTV();
     setTrendingTv(result);
-    console.log(result);
+  }
+
+  async function asyncCallSelectByGenreAction() {
+    console.log("calling genre");
+    const result = await ricercaPerGenereMovie("azione");
+    setGenreAction(result);
+  }
+
+  async function asyncCallSelectByGenreSciFi() {
+    console.log("calling genre");
+    const result = await ricercaPerGenereMovie("sci-fi");
+    setGenreSciFi(result);
+  }
+  async function asyncCallSelectByGenreCommedia() {
+    console.log("calling genre");
+    const result = await ricercaPerGenereMovie("commedia");
+    setGenreCommedia(result);
   }
 
   useEffect(() => {
     asyncCallTopRated();
     asyncCallTrendingTV();
     asyncCallTrendingWeek();
+    asyncCallSelectByGenreAction();
+    asyncCallSelectByGenreSciFi();
+    asyncCallSelectByGenreCommedia();
   }, []);
 
   const scrollRight = () => {
@@ -60,7 +84,7 @@ const Home = () => {
     <>
       <NavbarHome />
       <SliderHome />
-      <h2 className="bg-text-dark-liver title-riga">Top Movie</h2>
+      <h2 className="bg-text-dark-liver title-riga">Trending Movie</h2>
       <Container
         fluid
         className="overflow-auto horizontalrow d-flex align-items-center justify-content-center"
@@ -86,6 +110,7 @@ const Home = () => {
                   img={element.img}
                   nome={element.title}
                   id={element.id}
+                  text={element.desc}
                 />
               </Col>
             ))
@@ -104,14 +129,14 @@ const Home = () => {
         />
       </Container>
 
-      <h2 className="mt-5">Trending TV</h2>
+      <h2 className="bg-text-dark-liver title-riga">Trending TV</h2>
       <Container
         fluid
         className="overflow-auto mb-2 horizontalrow d-flex align-items-center justify-content-center"
       >
         <MDBIcon
           style={{ zIndex: "1" }}
-          size="4x"
+          size="3x"
           id="slide"
           type="button"
           onClick={scrollLeft1}
@@ -119,18 +144,146 @@ const Home = () => {
           icon="angle-left"
         />
         <Row className="flex-nowrap mt-2 mb-2 scorri" id="riga2">
-          {trendingTv.map((element) => (
-            <Col id="content" key={element.id}>
-              <GuardaFilm2
-                img={element.img}
-                nome={element.title}
-                id={element.id}
-              />
-            </Col>
-          ))}
+          {trendingTv != undefined ? (
+            trendingTv.map((element) => (
+              <Col id="content" key={element.id}>
+                <GuardaFilm2
+                  img={element.img}
+                  nome={element.title}
+                  id={element.id}
+                  text={element.desc}
+                />
+              </Col>
+            ))
+          ) : (
+            <></>
+          )}
         </Row>
         <MDBIcon
-          size="4x"
+          size="3x"
+          id="slide"
+          type="button"
+          onClick={scrollRight1}
+          fas
+          icon="angle-right"
+          style={{ zIndex: "1" }}
+        />
+      </Container>
+
+      <h2 className="bg-text-dark-liver title-riga">Azione</h2>
+      <Container
+        fluid
+        className="overflow-auto mb-2 horizontalrow d-flex align-items-center justify-content-center"
+      >
+        <MDBIcon
+          style={{ zIndex: "1" }}
+          size="3x"
+          id="slide"
+          type="button"
+          onClick={scrollLeft1}
+          fas
+          icon="angle-left"
+        />
+        <Row className="flex-nowrap mt-2 mb-2 scorri" id="riga2">
+          {genreAction != undefined ? (
+            genreAction.map((element) => (
+              <Col id="content" key={element.id}>
+                <GuardaFilm2
+                  img={element.img}
+                  nome={element.title}
+                  id={element.id}
+                  text={element.desc}
+                />
+              </Col>
+            ))
+          ) : (
+            <></>
+          )}
+        </Row>
+        <MDBIcon
+          size="3x"
+          id="slide"
+          type="button"
+          onClick={scrollRight1}
+          fas
+          icon="angle-right"
+          style={{ zIndex: "1" }}
+        />
+      </Container>
+
+      <h2 className="bg-text-dark-liver title-riga">Sci-Fi</h2>
+      <Container
+        fluid
+        className="overflow-auto mb-2 horizontalrow d-flex align-items-center justify-content-center"
+      >
+        <MDBIcon
+          style={{ zIndex: "1" }}
+          size="3x"
+          id="slide"
+          type="button"
+          onClick={scrollLeft1}
+          fas
+          icon="angle-left"
+        />
+        <Row className="flex-nowrap mt-2 mb-2 scorri" id="riga2">
+          {genreSciFi != undefined ? (
+            genreSciFi.map((element) => (
+              <Col id="content" key={element.id}>
+                <GuardaFilm2
+                  img={element.img}
+                  nome={element.title}
+                  id={element.id}
+                  text={element.desc}
+                />
+              </Col>
+            ))
+          ) : (
+            <></>
+          )}
+        </Row>
+        <MDBIcon
+          size="3x"
+          id="slide"
+          type="button"
+          onClick={scrollRight1}
+          fas
+          icon="angle-right"
+          style={{ zIndex: "1" }}
+        />
+      </Container>
+
+      <h2 className="bg-text-dark-liver title-riga">Commedia</h2>
+      <Container
+        fluid
+        className="overflow-auto mb-2 horizontalrow d-flex align-items-center justify-content-center"
+      >
+        <MDBIcon
+          style={{ zIndex: "1" }}
+          size="3x"
+          id="slide"
+          type="button"
+          onClick={scrollLeft1}
+          fas
+          icon="angle-left"
+        />
+        <Row className="flex-nowrap mt-2 mb-2 scorri" id="riga2">
+          {genreCommedia != undefined ? (
+            genreCommedia.map((element) => (
+              <Col id="content" key={element.id}>
+                <GuardaFilm2
+                  img={element.img}
+                  nome={element.title}
+                  id={element.id}
+                  text={element.desc}
+                />
+              </Col>
+            ))
+          ) : (
+            <></>
+          )}
+        </Row>
+        <MDBIcon
+          size="3x"
           id="slide"
           type="button"
           onClick={scrollRight1}
