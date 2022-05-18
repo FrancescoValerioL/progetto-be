@@ -15,7 +15,10 @@ const MyNav = () => {
 
   return (
     <>
-      <Navbar className={nav ? "shadowActive bg-platinum" : "shadowOff bg-platinum"} sticky="top">
+      <Navbar
+        className={nav ? "shadowActive bg-platinum" : "shadowOff bg-platinum"}
+        sticky="top"
+      >
         <Container className="mt-2">
           <Navbar.Brand href="/home">
             <img alt="" src={logo} width="180" />
