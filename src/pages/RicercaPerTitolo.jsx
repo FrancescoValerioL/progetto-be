@@ -3,7 +3,8 @@ import NavbarHome from "../components/NavbarHome";
 import MyFooter from "../components/MyFooter";
 import { useState, useEffect } from "react";
 import { ricercaPerTitolo } from "../scripts/RicercaPerTitolo";
-import { Container, Col, Row, Image } from "react-bootstrap";
+import { Container, Col, Row, Form } from "react-bootstrap";
+import GuardaFilm from "../components/GuardaFilm";
 
 const RicercaPerTitolo = () => {
   const [title, setTitle] = useState("");
@@ -27,28 +28,40 @@ const RicercaPerTitolo = () => {
   return (
     <>
       <NavbarHome />
-      <Container fluid className="overflow-auto bg-row-1 mb-2">
-        <Row className="mt-2 mb-2 mx-auto">
-          <input
+      <Container fluid className="mt-5">
+        <Row className="mt-5 d-flex align-items-center justify-content-center">
+          <Col md={6}>
+          <Form.Control
             type="text"
-            placeholder="Genere da ricercare"
+            placeholder="Cerca un titolo"
             onChange={changeValue}
-          ></input>
-          <h1>{title}</h1>
+          />
+          </Col>
         </Row>
       </Container>
-      <Container fluid className="overflow-auto bg-row-1 mb-2">
-        <Row className="mt-2 mb-2">
-          {found != undefined ? (
-            found.map((element) => (
-              <Col key={element.id}>
-                <Image src={element.img} style={{ width: "280px" }} />{" "}
-              </Col>
-            ))
+      <Container fluid>
+        <Row className="mt-5">
+          {title.length > 0 ? (
+            found != undefined ? (
+              found.map((element) => (
+                <Col id="content" className="d-flex align-items-center justify-content-center" key={element.id}>
+                  <GuardaFilm
+                    img={element.img}
+                    nome={element.title}
+                    id={element.id}
+                    text={element.desc}
+                  />
+                </Col>
+              ))
+            ) : (
+              <></>
+            )
           ) : (
             <></>
           )}
         </Row>
+      </Container>
+      <Container style={{height: '400px'}}>
       </Container>
       <MyFooter />
     </>
