@@ -24,7 +24,6 @@ const GuardaFilm = (props) => {
 
   const handleButtonClick = (e) => {
     handleShow();
-    console.log(e.target.offsetParent.value);
     asyncCall(e.target.offsetParent.value);
   };
 
