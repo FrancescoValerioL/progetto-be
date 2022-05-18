@@ -4,6 +4,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import NavbarHome from "../components/NavbarHome";
 import { ricercaPerGenere, trendingWeekTV, popularTv } from "../scripts/tv";
 import GuardaSerieTv from "../components/GuardaSerieTv";
+import MyFooter from "../components/MyFooter";
 
 const SerieTV = () => {
   let [trendingTv, setTrendingTv] = useState([]);
@@ -505,6 +506,7 @@ const SerieTV = () => {
           style={{ zIndex: "1" }}
         />
       </Container>
+      <MyFooter />
     </>
   );
 };

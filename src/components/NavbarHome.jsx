@@ -12,15 +12,7 @@ import {
 } from "react-bootstrap";
 import logo from "./img/logo.png";
 import React, { useState } from "react";
-import {
-  MDBBtn,
-  MDBDropdown,
-  MDBDropdownMenu,
-  MDBDropdownToggle,
-  MDBDropdownItem,
-  MDBDropdownLink,
-  MDBDropdownDivider,
-} from "mdb-react-ui-kit";
+import { MDBIcon } from "mdb-react-ui-kit";
 
 const NavbarHome = () => {
   const [nav, setNav] = useState(false);
@@ -60,15 +52,13 @@ const NavbarHome = () => {
                 <Nav.Link href="/serieTV">Serie TV</Nav.Link>
                 <Nav.Link href="/film">Film</Nav.Link>
                 <Nav.Link href="/preferiti">Preferiti</Nav.Link>
+                <Nav.Link href="/notifiche">
+                  <MDBIcon far icon="bell" size="lg" />
+                </Nav.Link>
+                <Nav.Link href="/ricerca">
+                  <MDBIcon fas icon="search" size="lg" />
+                </Nav.Link>
               </Nav>
-              <Form className="d-flex">
-                <FormControl
-                  type="search"
-                  placeholder="Cerca..."
-                  className="me-2"
-                  aria-label="Search"
-                />
-              </Form>
             </Offcanvas.Body>
           </Navbar.Offcanvas>
         </Container>

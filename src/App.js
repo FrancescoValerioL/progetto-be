@@ -7,6 +7,8 @@ import ProfileSelection from "./pages/ProfileSelection";
 import Film from "./pages/Film";
 import SerieTV from "./pages/SerieTV";
 import Preferiti from "./pages/Preferiti";
+import Notifiche from "./pages/Notifiche";
+import RicercaPerTitolo from "./pages/RicercaPerTitolo";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
         <Route path="/film" element={<Film />} />
         <Route path="/ProfileSelection" element={<ProfileSelection />} />
         <Route path="/preferiti" element={<Preferiti />} />
+        <Route path="/notifiche" element={<Notifiche />} />
+        <Route path="/ricerca" element={<RicercaPerTitolo />} />
       </Routes>
     </BrowserRouter>
   );
