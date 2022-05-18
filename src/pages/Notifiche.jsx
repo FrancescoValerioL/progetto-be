@@ -7,7 +7,7 @@ import {
   notifichePlaceholderTv,
   notifichePlaceholderMovie,
 } from "../scripts/tv";
-import MostraNotifiche from "../components/MostraNotifiche";
+import {MostraNotifiche, MostraNotificheTV} from "../components/MostraNotifiche";
 
 const Notifiche = () => {
   let [series, setSeries] = useState([]);
@@ -67,7 +67,7 @@ const Notifiche = () => {
           {series != undefined ? (
             series.map((element) => (
               <Col id="content" key={element.id} className="mx-auto">
-                <MostraNotifiche
+                <MostraNotificheTV
                   img={element.img}
                   nome={element.title}
                   id={element.id}

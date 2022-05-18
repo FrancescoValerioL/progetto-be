@@ -427,3 +427,13 @@ Alternativa F9F9ED */
   font-weight: 300;
   font-size: 35px;
 }
+
+.Lato-light{
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+}
+
+.Lato-bold{
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
+}
