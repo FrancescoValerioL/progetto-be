@@ -10,7 +10,15 @@ import {
   DropdownButton,
   Dropdown,
 } from "react-bootstrap";
-import { MDBBtn } from "mdb-react-ui-kit";
+import { MDBBtn,
+  MDBModal,
+  MDBModalDialog,
+  MDBModalContent,
+  MDBModalHeader,
+  MDBModalTitle,
+  MDBModalBody,
+  MDBModalFooter,
+} from 'mdb-react-ui-kit';
 import icon1 from "./sceltaProfilo/icon1.png";
 import icon2 from "./sceltaProfilo/icon2.png";
 import icon3 from "./sceltaProfilo/icon3.png";
@@ -20,6 +28,9 @@ const ProfileSelection = () => {
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  const [basicModal, setBasicModal] = useState(false);
+  const toggleShow = () => setBasicModal(!basicModal);
 
   const [profili, setProfili] = useState([
     {
@@ -31,10 +42,17 @@ const ProfileSelection = () => {
   const [nome, setNome] = useState("");
   const [genere, setGenere] = useState("");
   const [img, setImg] = useState("");
+  const [elimina, setElimina] = useState("");
+
 
   const changeNome = (event) => {
     setNome(event.target.value);
   };
+
+  const changeElimina = (event) => {
+    setElimina(event.target.value);
+  };
+
   const setAzione = () => {
     setGenere("Azione");
   };
@@ -75,6 +93,17 @@ const ProfileSelection = () => {
     handleClose();
   };
 
+  const removeProfile = () =>{
+    var trovato = profili.findIndex(el => el.nome === elimina)
+    if (trovato !== -1) {
+      profili.splice(trovato, 1);
+      toggleShow()
+    }
+    
+    
+  }
+
+
   return (
     <>
       {console.log(profili)}
@@ -112,6 +141,13 @@ const ProfileSelection = () => {
               <h3 className="textCenter mt-3">Aggiungi</h3>
             </Col>
           </Row>
+        </Row>
+        <Row className="d-flex align-items-center justify-content-center mt-5">
+          <Col>
+          <Button variant="danger" onClick={setBasicModal}>
+            Elimina
+          </Button>
+          </Col>
         </Row>
       </Container>
 
@@ -177,8 +213,40 @@ const ProfileSelection = () => {
           </Button>
         </Modal.Footer>
       </Modal>
+
+
+
+
+          <MDBModal show={basicModal} setShow={setBasicModal} tabIndex='-1'>
+      <MDBModalDialog>
+        <MDBModalContent>
+          <MDBModalHeader>
+            <MDBModalTitle className="textCenter bg-text-dark-liver">Elimina un profilo</MDBModalTitle>
+            <MDBBtn className='btn-close' color='none' onClick={toggleShow}></MDBBtn>
+          </MDBModalHeader>
+          <MDBModalBody>
+          <Form.Control
+              type="text"
+              placeholder="Scrivi il nome del profilo da eliminare"
+              onChange={changeElimina}
+            />
+          </MDBModalBody>
+          <MDBModalFooter>
+          <Button variant="danger" onClick={removeProfile}>
+            Elimina
+          </Button>
+          </MDBModalFooter>
+        </MDBModalContent>
+      </MDBModalDialog>
+    </MDBModal>
+
+
     </>
   );
 };
 
 export default ProfileSelection;
+     
+
+
+  
