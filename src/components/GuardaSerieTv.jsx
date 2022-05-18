@@ -44,7 +44,7 @@ const GuardaSerieTv = (props) => {
         </Modal.Header>
         <Modal.Body className="bg-platinum">
           <Row className="mt-3 d-flex align-items-center justify-content-center">
-            <ReactPlayer url={trailer} controls="true" />
+            <ReactPlayer url={trailer} controls={true} />
           </Row>
           <Row className="mt-5 d-flex align-items-center justify-content-center">
             <p className="textPlayVideo">{props.text}</p>
