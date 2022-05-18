@@ -59,18 +59,7 @@ const NavbarHome = () => {
                 <Nav.Link href="/home">Home</Nav.Link>
                 <Nav.Link href="/serieTV">Serie TV</Nav.Link>
                 <Nav.Link href="/film">Film</Nav.Link>
-                <NavDropdown
-                  title="Categorie"
-                  id={`offcanvasNavbarDropdown-expand-xl`}
-                >
-                  <NavDropdown.Item href="#action3">azione3</NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">azione4</NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">azione5</NavDropdown.Item>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action5">
-                    Something else here
-                  </NavDropdown.Item>
-                </NavDropdown>
+                <Nav.Link href="/preferiti">Preferiti</Nav.Link>
               </Nav>
               <Form className="d-flex">
                 <FormControl

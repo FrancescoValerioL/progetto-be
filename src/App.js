@@ -9,6 +9,7 @@ import Horizontal from "./pages/Horizontal";
 import ProfileSelection from "./pages/ProfileSelection";
 import Film from "./pages/Film";
 import SerieTV from "./pages/SerieTV";
+import Preferiti from "./pages/Preferiti";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/serieTV" element={<SerieTV />} />
         <Route path="/film" element={<Film />} />
         <Route path="/ProfileSelection" element={<ProfileSelection />} />
+        <Route path="/preferiti" element={<Preferiti />} />
       </Routes>
     </BrowserRouter>
   );

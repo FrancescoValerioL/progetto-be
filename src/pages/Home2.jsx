@@ -10,9 +10,9 @@ import {
 import { trendingWeekTV } from "../scripts/tv";
 import SliderHome from "../components/SliderHome";
 import MyFooter from "../components/MyFooter";
-import axios from "axios";
 import { MDBIcon } from "mdb-react-ui-kit";
 import GuardaFilm2 from "../components/GuardaFilm2";
+import GuardaSerieTv from "../components/GuardaSerieTv";
 
 const Home = () => {
   let [filmsTop, setFilms] = useState([]);
@@ -87,7 +87,7 @@ const Home = () => {
   const scrollLeft2 = () => {
     document.getElementById("riga3").scrollLeft -= 900;
   };
-  
+
   const scrollRight3 = () => {
     document.getElementById("riga4").scrollLeft += 900;
   };
@@ -108,7 +108,9 @@ const Home = () => {
     <>
       <NavbarHome />
       <SliderHome />
-      <h2 className="bg-text-dark-liver title-riga marginTitoloRigaSmartphone">Trending Movie</h2>
+      <h2 className="bg-text-dark-liver title-riga marginTitoloRigaSmartphone">
+        Trending Movie
+      </h2>
       <Container
         fluid
         className="overflow-auto horizontalrow d-flex align-items-center justify-content-center"
@@ -167,11 +169,15 @@ const Home = () => {
           fas
           icon="angle-left"
         />
-        <Row className="flex-nowrap scorri d-flex align-items-center" style={{ height: "330px" }} id="riga2">
+        <Row
+          className="flex-nowrap scorri d-flex align-items-center"
+          style={{ height: "330px" }}
+          id="riga2"
+        >
           {trendingTv != undefined ? (
             trendingTv.map((element) => (
               <Col id="content" key={element.id}>
-                <GuardaFilm2
+                <GuardaSerieTv
                   img={element.img}
                   nome={element.title}
                   id={element.id}
@@ -208,7 +214,11 @@ const Home = () => {
           fas
           icon="angle-left"
         />
-        <Row className="flex-nowrap scorri d-flex align-items-center" style={{ height: "330px" }} id="riga3">
+        <Row
+          className="flex-nowrap scorri d-flex align-items-center"
+          style={{ height: "330px" }}
+          id="riga3"
+        >
           {genreAction != undefined ? (
             genreAction.map((element) => (
               <Col id="content" key={element.id}>
@@ -249,7 +259,11 @@ const Home = () => {
           fas
           icon="angle-left"
         />
-        <Row className="flex-nowrap scorri d-flex align-items-center" style={{ height: "330px" }} id="riga4">
+        <Row
+          className="flex-nowrap scorri d-flex align-items-center"
+          style={{ height: "330px" }}
+          id="riga4"
+        >
           {genreSciFi != undefined ? (
             genreSciFi.map((element) => (
               <Col id="content" key={element.id}>
@@ -290,7 +304,11 @@ const Home = () => {
           fas
           icon="angle-left"
         />
-        <Row className="flex-nowrap scorri d-flex align-items-center" style={{ height: "330px" }} id="riga5">
+        <Row
+          className="flex-nowrap scorri d-flex align-items-center"
+          style={{ height: "330px" }}
+          id="riga5"
+        >
           {genreCommedia != undefined ? (
             genreCommedia.map((element) => (
               <Col id="content" key={element.id}>
