@@ -4,6 +4,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import GuardaFilm2 from "../components/GuardaFilm2";
 import NavbarHome from "../components/NavbarHome";
 import { ricercaPerGenere, trendingWeekTV, popularTv } from "../scripts/tv";
+import GuardaSerieTv from "../components/GuardaSerieTv";
 
 const SerieTV = () => {
   let [trendingTv, setTrendingTv] = useState([]);
@@ -164,7 +165,7 @@ const SerieTV = () => {
           {trendingTv != undefined ? (
             trendingTv.map((element) => (
               <Col id="content" key={element.id}>
-                <GuardaFilm2
+                <GuardaSerieTv
                   img={element.img}
                   nome={element.title}
                   id={element.id}
@@ -210,7 +211,7 @@ const SerieTV = () => {
           {popular != undefined ? (
             popular.map((element) => (
               <Col id="content" key={element.id}>
-                <GuardaFilm2
+                <GuardaSerieTv
                   img={element.img}
                   nome={element.title}
                   id={element.id}
@@ -255,7 +256,7 @@ const SerieTV = () => {
           {genreAction != undefined ? (
             genreAction.map((element) => (
               <Col id="content" key={element.id}>
-                <GuardaFilm2
+                <GuardaSerieTv
                   img={element.img}
                   nome={element.title}
                   id={element.id}
@@ -300,7 +301,7 @@ const SerieTV = () => {
           {genreSciFi != undefined ? (
             genreSciFi.map((element) => (
               <Col id="content" key={element.id}>
-                <GuardaFilm2
+                <GuardaSerieTv
                   img={element.img}
                   nome={element.title}
                   id={element.id}
@@ -346,7 +347,7 @@ const SerieTV = () => {
           {genreCommedia != undefined ? (
             genreCommedia.map((element) => (
               <Col id="content" key={element.id}>
-                <GuardaFilm2
+                <GuardaSerieTv
                   img={element.img}
                   nome={element.title}
                   id={element.id}
@@ -392,7 +393,7 @@ const SerieTV = () => {
           {genreAnimazione != undefined ? (
             genreAnimazione.map((element) => (
               <Col id="content" key={element.id}>
-                <GuardaFilm2
+                <GuardaSerieTv
                   img={element.img}
                   nome={element.title}
                   id={element.id}
@@ -438,7 +439,7 @@ const SerieTV = () => {
           {genreThriller != undefined ? (
             genreThriller.map((element) => (
               <Col id="content" key={element.id}>
-                <GuardaFilm2
+                <GuardaSerieTv
                   img={element.img}
                   nome={element.title}
                   id={element.id}
@@ -483,7 +484,7 @@ const SerieTV = () => {
           {genreCrime != undefined ? (
             genreCrime.map((element) => (
               <Col id="content" key={element.id}>
-                <GuardaFilm2
+                <GuardaSerieTv
                   img={element.img}
                   nome={element.title}
                   id={element.id}
