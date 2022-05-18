@@ -1,6 +1,6 @@
-import { MDBBtn } from "mdb-react-ui-kit";
+import { MDBBtn, MDBIcon } from "mdb-react-ui-kit";
 import { useState } from "react";
-import { Modal, Row, Image } from "react-bootstrap";
+import { Modal, Row, Image, ModalFooter } from "react-bootstrap";
 import { selectVideo, selectVideoTv } from "../scripts/selectVideo";
 import ReactPlayer from "react-player";
 
@@ -50,6 +50,17 @@ const GuardaSerieTv = (props) => {
             <p className="textPlayVideo">{props.text}</p>
           </Row>
         </Modal.Body>
+        <ModalFooter>
+          <MDBBtn>
+            <MDBIcon fas icon="heart" />
+          </MDBBtn>
+          <MDBBtn>
+            <MDBIcon fab icon="facebook" />
+          </MDBBtn>
+          <MDBBtn>
+            <MDBIcon fab icon="whatsapp" />
+          </MDBBtn>
+        </ModalFooter>
       </Modal>
     </>
   );
