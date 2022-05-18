@@ -295,6 +295,12 @@ Alternativa F9F9ED */
   .textPlayVideo{
     width: 80%;
   }
+
+  .iconaScegliProfilo{
+    width: 50%;
+  }
+
+  
 }
 
 @media screen and (max-width: 500px) {

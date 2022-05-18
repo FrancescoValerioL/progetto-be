@@ -47,7 +47,7 @@ const NavbarHome = () => {
                 <Nav.Link href="/ricerca">
                   <MDBIcon fas icon="search" size="lg" />
                 </Nav.Link>
-                <Nav.Link href="">
+                <Nav.Link href="/">
                   <MDBIcon fas icon="sign-out-alt" size="lg" />
                 </Nav.Link>
               </Nav>

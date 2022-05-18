@@ -43,6 +43,7 @@ const ProfileSelection = () => {
   const [genere, setGenere] = useState("");
   const [img, setImg] = useState("");
   const [elimina, setElimina] = useState("");
+  const [eliminaTrovato, setEliminaTrovato] = useState(true);
 
 
   const changeNome = (event) => {
@@ -98,18 +99,18 @@ const ProfileSelection = () => {
     if (trovato !== -1) {
       profili.splice(trovato, 1);
       toggleShow()
+      setEliminaTrovato(true)
+    }else{
+      setEliminaTrovato(false)
     }
-    
-    
   }
 
 
   return (
     <>
-      {console.log(profili)}
       <Container className="mt-5 modale">
         <Row>
-          <h1 style={{ fontWeight: "300" }} className="textCenter mt-5">
+          <h1 className="textCenter mt-5 Lato-bold">
             Chi vuole guardare?
           </h1>
         </Row>
@@ -120,34 +121,38 @@ const ProfileSelection = () => {
           >
             {profili.length >= 0 ? (
               profili.map((el) => (
-                <Col md={3} style={{ padding: "20px" }}>
-                  <a href="/home">
+                <Col className='iconaScegliProfilo' md={3} style={{ padding: "20px" }}>
+                  <a href="/home" >
                     <Image src={el.img} style={{ width: "100%" }} />
                   </a>
-                  <h3 className="textCenter mt-3">{el.nome}</h3>
+                  <h3 className="textCenter mt-3 Lato-bold">{el.nome}</h3>
                   <p className="textCenter mt-3">{el.genere}</p>
                 </Col>
               ))
             ) : (
               <></>
             )}
-            <Col md={3} style={{ padding: "20px" }}>
+            <Col className='iconaScegliProfilo' md={3} style={{ padding: "20px" }}>
               <a onClick={handleShow}>
                 <Image
                   src="https://cdn-icons-png.flaticon.com/512/1057/1057240.png"
                   style={{ width: "100%" }}
+                  
                 />
               </a>
-              <h3 className="textCenter mt-3">Aggiungi</h3>
+              <h3 className="textCenter mt-3 Lato-bold">Aggiungi</h3>
+            </Col>
+            <Col className='iconaScegliProfilo' md={3} style={{ padding: "20px" }}>
+              <a onClick={setBasicModal}>
+                <Image
+                  src="https://cdn-icons-png.flaticon.com/512/1828/1828843.png"
+                  style={{ width: "100%" }}
+                  
+                />
+              </a>
+              <h3 className="textCenter mt-3 Lato-bold">Elimina</h3>
             </Col>
           </Row>
-        </Row>
-        <Row className="d-flex align-items-center justify-content-center mt-5">
-          <Col>
-          <Button variant="danger" onClick={setBasicModal}>
-            Elimina
-          </Button>
-          </Col>
         </Row>
       </Container>
 
@@ -205,13 +210,14 @@ const ProfileSelection = () => {
                 </MDBBtn>
               </Col>
             </Row>
+          </Row> 
+        <Row className="d-flex align-items-center justify-content-center mt-5">
+          <Col md={4}>
+          <MDBBtn  className="myButton" onClick={addProfile}>Aggiungi</MDBBtn>
+          </Col>          
           </Row>
         </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={addProfile}>
-            Aggiungi
-          </Button>
-        </Modal.Footer>
+
       </Modal>
 
 
@@ -231,6 +237,7 @@ const ProfileSelection = () => {
               onChange={changeElimina}
             />
           </MDBModalBody>
+          {eliminaTrovato === false ? <p style={{color: 'red'}} className="textCenter">Scrivi esattamente il nome del profilo da eliminare</p> : <></>}
           <MDBModalFooter>
           <Button variant="danger" onClick={removeProfile}>
             Elimina
