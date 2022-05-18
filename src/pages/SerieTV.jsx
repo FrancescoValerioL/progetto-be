@@ -1,7 +1,6 @@
 import { MDBIcon } from "mdb-react-ui-kit";
 import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import GuardaFilm2 from "../components/GuardaFilm2";
 import NavbarHome from "../components/NavbarHome";
 import { ricercaPerGenere, trendingWeekTV, popularTv } from "../scripts/tv";
 import GuardaSerieTv from "../components/GuardaSerieTv";

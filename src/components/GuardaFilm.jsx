@@ -4,7 +4,7 @@ import { Card, Modal, Row, Image } from "react-bootstrap";
 import { selectVideo } from "../scripts/selectVideo";
 import ReactPlayer from "react-player";
 
-const GuardaFilm2 = (props) => {
+const GuardaFilm = (props) => {
   const [show, setShow] = useState(false);
   const [trailer, setTrailer] = useState("");
   const [id, setId] = useState("");
@@ -38,11 +38,10 @@ const GuardaFilm2 = (props) => {
         <Image className="imgRiga" src={props.img} value={props.id} />
       </MDBBtn>
       <Modal size="xl" show={show} onHide={handleClose}>
-        <Modal.Header
-          className="bg-cornflower-blue-reverse"
-          closeButton
-        >
-          <Modal.Title className="Lato-title textCenter">{props.nome}</Modal.Title>
+        <Modal.Header className="bg-cornflower-blue-reverse" closeButton>
+          <Modal.Title className="Lato-title textCenter">
+            {props.nome}
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body className="bg-platinum">
           <Row className="mt-3 d-flex align-items-center justify-content-center">
@@ -57,4 +56,4 @@ const GuardaFilm2 = (props) => {
   );
 };
 
-export default GuardaFilm2;
+export default GuardaFilm;

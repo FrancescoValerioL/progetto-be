@@ -4,7 +4,7 @@ import { Modal, Row } from "react-bootstrap";
 import { selectVideo } from "../scripts/selectVideo";
 import ReactPlayer from "react-player";
 
-const GuardaFilm = (props) => {
+const GuardaFilmSlider = (props) => {
   const [show, setShow] = useState(false);
   const [trailer, setTrailer] = useState("");
 
@@ -26,15 +26,18 @@ const GuardaFilm = (props) => {
 
   return (
     <>
-      <MDBBtn onClick={handleButtonClick} className="myButton posizioneButtonSmartphone" value={props.id}>
+      <MDBBtn
+        onClick={handleButtonClick}
+        className="myButton posizioneButtonSmartphone"
+        value={props.id}
+      >
         Guarda
       </MDBBtn>
       <Modal size="xl" show={show} onHide={handleClose}>
-        <Modal.Header
-          className="bg-cornflower-blue-reverse"
-          closeButton
-        >
-          <Modal.Title className="Lato-title textCenter">{props.nome}</Modal.Title>
+        <Modal.Header className="bg-cornflower-blue-reverse" closeButton>
+          <Modal.Title className="Lato-title textCenter">
+            {props.nome}
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body className="bg-platinum">
           <Row className="mt-3 d-flex align-items-center justify-content-center">
@@ -49,4 +52,4 @@ const GuardaFilm = (props) => {
   );
 };
 
-export default GuardaFilm;
+export default GuardaFilmSlider;

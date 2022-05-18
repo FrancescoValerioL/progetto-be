@@ -4,7 +4,7 @@ import MyFooter from "../components/MyFooter";
 import { MDBIcon } from "mdb-react-ui-kit";
 import { Container, Row, Col } from "react-bootstrap";
 import { useState, useEffect } from "react";
-import GuardaFilm2 from "../components/GuardaFilm2";
+import GuardaFilm from "../components/GuardaFilm";
 import { trendingWeek } from "../scripts/movie";
 import { trendingWeekTV } from "../scripts/tv";
 import GuardaSerieTv from "../components/GuardaSerieTv";
@@ -68,7 +68,7 @@ const Preferiti = () => {
           {filmsTrending != undefined ? (
             filmsTrending.map((element) => (
               <Col id="content" key={element.id}>
-                <GuardaFilm2
+                <GuardaFilm
                   img={element.img}
                   nome={element.title}
                   id={element.id}

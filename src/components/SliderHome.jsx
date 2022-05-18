@@ -1,6 +1,6 @@
 import { MDBBtn } from "mdb-react-ui-kit";
 import { Carousel, Container } from "react-bootstrap";
-import GuardaFilm from "./esempioOverlay";
+import GuardaFilmSlider from "./esempioOverlay";
 import { useState, useEffect } from "react";
 import { topRated } from "../scripts/movie";
 import axios from "axios";
@@ -35,7 +35,7 @@ const SliderHome = () => {
               </div>
               <Carousel.Caption className="mb-5">
                 <h5 className="titoloSlider">{el.title}</h5>
-                <GuardaFilm nome={el.title} id={el.id} text={el.desc} />
+                <GuardaFilmSlider nome={el.title} id={el.id} text={el.desc} />
               </Carousel.Caption>
             </Carousel.Item>
           ))}

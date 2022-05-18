@@ -1,7 +1,7 @@
 import React from "react";
 import NavbarHome from "../components/NavbarHome";
 import MyFooter from "../components/MyFooter";
-import GuardaFilm2 from "../components/GuardaFilm2";
+import GuardaFilm from "../components/GuardaFilm";
 import { MDBIcon } from "mdb-react-ui-kit";
 import { Container, Row, Col } from "react-bootstrap";
 import { useState, useEffect } from "react";
@@ -155,7 +155,7 @@ const Film = () => {
           {filmsTrending != undefined ? (
             filmsTrending.map((element) => (
               <Col id="content" key={element.id}>
-                <GuardaFilm2
+                <GuardaFilm
                   img={element.img}
                   nome={element.title}
                   id={element.id}
@@ -200,7 +200,7 @@ const Film = () => {
           {filmsTop != undefined ? (
             filmsTop.map((element) => (
               <Col id="content" key={element.id}>
-                <GuardaFilm2
+                <GuardaFilm
                   img={element.img}
                   nome={element.title}
                   id={element.id}
@@ -245,7 +245,7 @@ const Film = () => {
           {genreSciFi != undefined ? (
             genreSciFi.map((element) => (
               <Col id="content" key={element.id}>
-                <GuardaFilm2
+                <GuardaFilm
                   img={element.img}
                   nome={element.title}
                   id={element.id}
@@ -290,7 +290,7 @@ const Film = () => {
           {genreCommedia != undefined ? (
             genreCommedia.map((element) => (
               <Col id="content" key={element.id}>
-                <GuardaFilm2
+                <GuardaFilm
                   img={element.img}
                   nome={element.title}
                   id={element.id}
@@ -335,7 +335,7 @@ const Film = () => {
           {genreAction != undefined ? (
             genreAction.map((element) => (
               <Col id="content" key={element.id}>
-                <GuardaFilm2
+                <GuardaFilm
                   img={element.img}
                   nome={element.title}
                   id={element.id}
@@ -380,7 +380,7 @@ const Film = () => {
           {genreAnimazione != undefined ? (
             genreAnimazione.map((element) => (
               <Col id="content" key={element.id}>
-                <GuardaFilm2
+                <GuardaFilm
                   img={element.img}
                   nome={element.title}
                   id={element.id}
@@ -425,7 +425,7 @@ const Film = () => {
           {genreCrime != undefined ? (
             genreCrime.map((element) => (
               <Col id="content" key={element.id}>
-                <GuardaFilm2
+                <GuardaFilm
                   img={element.img}
                   nome={element.title}
                   id={element.id}
@@ -470,7 +470,7 @@ const Film = () => {
           {genreWestern != undefined ? (
             genreWestern.map((element) => (
               <Col id="content" key={element.id}>
-                <GuardaFilm2
+                <GuardaFilm
                   img={element.img}
                   nome={element.title}
                   id={element.id}

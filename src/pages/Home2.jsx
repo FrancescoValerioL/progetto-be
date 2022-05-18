@@ -11,7 +11,7 @@ import { trendingWeekTV } from "../scripts/tv";
 import SliderHome from "../components/SliderHome";
 import MyFooter from "../components/MyFooter";
 import { MDBIcon } from "mdb-react-ui-kit";
-import GuardaFilm2 from "../components/GuardaFilm2";
+import GuardaFilm from "../components/GuardaFilm";
 import GuardaSerieTv from "../components/GuardaSerieTv";
 
 const Home = () => {
@@ -132,7 +132,7 @@ const Home = () => {
           {filmsTop != undefined ? (
             filmsTrending.map((element) => (
               <Col id="content" key={element.id}>
-                <GuardaFilm2
+                <GuardaFilm
                   img={element.img}
                   nome={element.title}
                   id={element.id}
@@ -222,7 +222,7 @@ const Home = () => {
           {genreAction != undefined ? (
             genreAction.map((element) => (
               <Col id="content" key={element.id}>
-                <GuardaFilm2
+                <GuardaFilm
                   img={element.img}
                   nome={element.title}
                   id={element.id}
@@ -267,7 +267,7 @@ const Home = () => {
           {genreSciFi != undefined ? (
             genreSciFi.map((element) => (
               <Col id="content" key={element.id}>
-                <GuardaFilm2
+                <GuardaFilm
                   img={element.img}
                   nome={element.title}
                   id={element.id}
@@ -312,7 +312,7 @@ const Home = () => {
           {genreCommedia != undefined ? (
             genreCommedia.map((element) => (
               <Col id="content" key={element.id}>
-                <GuardaFilm2
+                <GuardaFilm
                   img={element.img}
                   nome={element.title}
                   id={element.id}
