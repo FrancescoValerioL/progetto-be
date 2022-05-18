@@ -89,5 +89,41 @@ function ricercaPerGenere(genre) {
       });
   });
 }
+function notifichePlaceholderMovie() {
+  return new Promise((resolve) => {
+    let movies = [];
+    axios
+      .get("http://localhost:2000/api/movie/notificePlaceholder")
+      .then(function (response) {
+        movies = response.data.map((elem) => elem);
+        resolve(movies);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  });
+}
 
-export { trendingWeekTV, topRatedTV, popularTv, ricercaPerGenere };
+function notifichePlaceholderTv() {
+  return new Promise((resolve) => {
+    let series = [];
+    axios
+      .get("http://localhost:2000/api/tv/notificePlaceholder")
+      .then(function (response) {
+        series = response.data.map((elem) => elem);
+        resolve(series);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  });
+}
+
+export {
+  trendingWeekTV,
+  topRatedTV,
+  popularTv,
+  ricercaPerGenere,
+  notifichePlaceholderMovie,
+  notifichePlaceholderTv,
+};

@@ -4,7 +4,7 @@ import { Card, Modal, Row, Image } from "react-bootstrap";
 import { selectVideo } from "../scripts/selectVideo";
 import ReactPlayer from "react-player";
 
-const GuardaFilm = (props) => {
+const MostraNotifiche = (props) => {
   const [show, setShow] = useState(false);
   const [trailer, setTrailer] = useState("");
   const [id, setId] = useState("");
@@ -31,11 +31,13 @@ const GuardaFilm = (props) => {
   return (
     <>
       <MDBBtn
-        className="buttonRiga myButton"
+        className="buttonRigaNotifiche myButton"
         onClick={(e) => handleButtonClick(e)}
         value={props.id}
       >
         <Image className="imgRiga" src={props.img} value={props.id} />
+        {props.nome} <hr />
+        {props.release_date}
       </MDBBtn>
       <Modal size="xl" show={show} onHide={handleClose}>
         <Modal.Header className="bg-cornflower-blue-reverse" closeButton>
@@ -56,4 +58,4 @@ const GuardaFilm = (props) => {
   );
 };
 
-export default GuardaFilm;
+export default MostraNotifiche;
