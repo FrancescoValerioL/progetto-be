@@ -36,7 +36,7 @@ const Notifiche = () => {
       </h2>
       <Container
         fluid
-        className="overflow-auto mb-2 horizontalrow d-flex align-items-center justify-content-center"
+        className="overflow-auto mb-3 horizontalrow d-flex align-items-center justify-content-center"
       >
         <Row>
           {movies != undefined ? (
@@ -61,7 +61,7 @@ const Notifiche = () => {
       </h2>
       <Container
         fluid
-        className="overflow-auto mb-2 horizontalrow d-flex align-items-center justify-content-center"
+        className="overflow-auto mb-5 horizontalrow d-flex align-items-center justify-content-center"
       >
         <Row>
           {series != undefined ? (
@@ -81,7 +81,6 @@ const Notifiche = () => {
           )}
         </Row>
       </Container>
-      <Container style={{ height: "400px" }}></Container>
       <MyFooter />
     </>
   );

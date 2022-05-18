@@ -1,6 +1,6 @@
-import { MDBBtn } from "mdb-react-ui-kit";
+import { MDBBtn, MDBIcon } from "mdb-react-ui-kit";
 import { useState } from "react";
-import { Card, Modal, Row, Image } from "react-bootstrap";
+import { Card, Modal, ModalFooter, Row, Image } from "react-bootstrap";
 import { selectVideo } from "../scripts/selectVideo";
 import ReactPlayer from "react-player";
 
@@ -40,6 +40,10 @@ const GuardaFilm = (props) => {
         <Modal.Header className="bg-cornflower-blue-reverse" closeButton>
           <Modal.Title className="Lato-title textCenter">
             {props.nome}
+            {props.nome}{" "}
+            <MDBBtn className="myButton" style={{ padding: "5px", left: "3%" }}>
+              <MDBIcon fas icon="heart" />
+            </MDBBtn>
           </Modal.Title>
         </Modal.Header>
         <Modal.Body className="bg-platinum">
@@ -50,6 +54,14 @@ const GuardaFilm = (props) => {
             <p className="textPlayVideo">{props.text}</p>
           </Row>
         </Modal.Body>
+        <ModalFooter className="d-flex align-items-center justify-content-center bg-platinum">
+          <MDBBtn className="myButton" style={{ marginRight: "20px" }}>
+            <MDBIcon fab icon="facebook" />
+          </MDBBtn>
+          <MDBBtn className="myButton">
+            <MDBIcon fab icon="whatsapp" />
+          </MDBBtn>
+        </ModalFooter>
       </Modal>
     </>
   );

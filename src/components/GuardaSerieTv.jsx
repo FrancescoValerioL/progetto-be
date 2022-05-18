@@ -39,7 +39,10 @@ const GuardaSerieTv = (props) => {
       <Modal size="xl" show={show} onHide={handleClose}>
         <Modal.Header className="bg-cornflower-blue-reverse" closeButton>
           <Modal.Title className="Lato-title textCenter">
-            {props.nome}
+            {props.nome}{" "}
+            <MDBBtn className="myButton" style={{ padding: "5px", left: "3%" }}>
+              <MDBIcon fas icon="heart" />
+            </MDBBtn>
           </Modal.Title>
         </Modal.Header>
         <Modal.Body className="bg-platinum">
@@ -50,14 +53,11 @@ const GuardaSerieTv = (props) => {
             <p className="textPlayVideo">{props.text}</p>
           </Row>
         </Modal.Body>
-        <ModalFooter>
-          <MDBBtn>
-            <MDBIcon fas icon="heart" />
-          </MDBBtn>
-          <MDBBtn>
+        <ModalFooter className="d-flex align-items-center justify-content-center bg-platinum">
+          <MDBBtn className="myButton" style={{ marginRight: "20px" }}>
             <MDBIcon fab icon="facebook" />
           </MDBBtn>
-          <MDBBtn>
+          <MDBBtn className="myButton">
             <MDBIcon fab icon="whatsapp" />
           </MDBBtn>
         </ModalFooter>
