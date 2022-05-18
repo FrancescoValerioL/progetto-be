@@ -1,15 +1,4 @@
-import {
-  Navbar,
-  Nav,
-  Container,
-  Col,
-  Button,
-  Stack,
-  Form,
-  FormControl,
-  Offcanvas,
-  NavDropdown,
-} from "react-bootstrap";
+import { Navbar, Nav, Container, Offcanvas } from "react-bootstrap";
 import logo from "./img/logo.png";
 import React, { useState } from "react";
 import { MDBIcon } from "mdb-react-ui-kit";
