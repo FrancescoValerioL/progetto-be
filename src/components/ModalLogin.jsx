@@ -1,6 +1,6 @@
 import { MDBBtn } from "mdb-react-ui-kit";
 import { useState } from "react";
-import { Modal, ModalFooter } from "react-bootstrap";
+import { Modal, ModalFooter, Row, Col } from "react-bootstrap";
 import { MDBRow, MDBCol, MDBCheckbox, MDBInput } from "mdb-react-ui-kit";
 
 const ModalLogin = () => {
@@ -23,7 +23,7 @@ const ModalLogin = () => {
       <Modal size="sm" show={show} onHide={handleClose}>
         <Modal.Header className="bg-cornflower-blue-reverse" closeButton>
           <Modal.Title className="Lato-title textCenter">
-            <h1>Login</h1>
+            <h1 className="bg-cornflower-blue-reverse">Login</h1>
           </Modal.Title>
         </Modal.Header>
         <Modal.Body className="bg-platinum">
@@ -42,24 +42,19 @@ const ModalLogin = () => {
             />
 
             <MDBRow className="mb-4">
-              <MDBCol className="d-flex justify-content-center">
-                <MDBCheckbox
-                  id="form1Example3"
-                  label="Remember me"
-                  defaultChecked
-                />
-              </MDBCol>
               <MDBCol>
                 <a href="#!">Forgot password?</a>
               </MDBCol>
             </MDBRow>
-
-            <MDBBtn block href="/ProfileSelection">
-              Sign in
-            </MDBBtn>
+            <Row className="mt-5 d-flex align-items-center justify-content-center">
+              <Col md={6}>
+              <MDBBtn className="myButton" block href="/ProfileSelection">
+                Sign in
+              </MDBBtn>
+              </Col>
+            </Row>
           </form>
         </Modal.Body>
-        <ModalFooter className="d-flex align-items-center justify-content-center bg-platinum"></ModalFooter>
       </Modal>
     </>
   );
