@@ -10,7 +10,8 @@ import {
   DropdownButton,
   Dropdown,
 } from "react-bootstrap";
-import { MDBBtn,
+import {
+  MDBBtn,
   MDBModal,
   MDBModalDialog,
   MDBModalContent,
@@ -18,7 +19,7 @@ import { MDBBtn,
   MDBModalTitle,
   MDBModalBody,
   MDBModalFooter,
-} from 'mdb-react-ui-kit';
+} from "mdb-react-ui-kit";
 import icon1 from "./sceltaProfilo/icon1.png";
 import icon2 from "./sceltaProfilo/icon2.png";
 import icon3 from "./sceltaProfilo/icon3.png";
@@ -44,7 +45,6 @@ const ProfileSelection = () => {
   const [img, setImg] = useState("");
   const [elimina, setElimina] = useState("");
   const [eliminaTrovato, setEliminaTrovato] = useState(true);
-
 
   const changeNome = (event) => {
     setNome(event.target.value);
@@ -86,33 +86,32 @@ const ProfileSelection = () => {
   };
 
   const addProfile = () => {
-    profili.push({
-      nome: nome,
-      genere: genere,
-      img: img,
-    });
+    if (profili.length < 4)
+      profili.push({
+        nome: nome,
+        genere: genere,
+        img: img,
+      });
+
     handleClose();
   };
 
-  const removeProfile = () =>{
-    var trovato = profili.findIndex(el => el.nome === elimina)
+  const removeProfile = () => {
+    var trovato = profili.findIndex((el) => el.nome === elimina);
     if (trovato !== -1) {
       profili.splice(trovato, 1);
-      toggleShow()
-      setEliminaTrovato(true)
-    }else{
-      setEliminaTrovato(false)
+      toggleShow();
+      setEliminaTrovato(true);
+    } else {
+      setEliminaTrovato(false);
     }
-  }
-
+  };
 
   return (
     <>
       <Container className="mt-5 modale">
         <Row>
-          <h1 className="textCenter mt-5 Lato-bold">
-            Chi vuole guardare?
-          </h1>
+          <h1 className="textCenter mt-5 Lato-bold">Chi vuole guardare?</h1>
         </Row>
         <Row className="d-flex justify-content-center bd-highlight col-example mt-3">
           <Row
@@ -121,8 +120,12 @@ const ProfileSelection = () => {
           >
             {profili.length >= 0 ? (
               profili.map((el) => (
-                <Col className='iconaScegliProfilo' md={3} style={{ padding: "20px" }}>
-                  <a href="/home" >
+                <Col
+                  className="iconaScegliProfilo"
+                  md={3}
+                  style={{ padding: "20px" }}
+                >
+                  <a href="/home">
                     <Image src={el.img} style={{ width: "100%" }} />
                   </a>
                   <h3 className="textCenter mt-3 Lato-bold">{el.nome}</h3>
@@ -132,22 +135,28 @@ const ProfileSelection = () => {
             ) : (
               <></>
             )}
-            <Col className='iconaScegliProfilo' md={3} style={{ padding: "20px" }}>
+            <Col
+              className="iconaScegliProfilo"
+              md={3}
+              style={{ padding: "20px" }}
+            >
               <a onClick={handleShow}>
                 <Image
                   src="https://cdn-icons-png.flaticon.com/512/1057/1057240.png"
                   style={{ width: "100%" }}
-                  
                 />
               </a>
               <h3 className="textCenter mt-3 Lato-bold">Aggiungi</h3>
             </Col>
-            <Col className='iconaScegliProfilo' md={3} style={{ padding: "20px" }}>
+            <Col
+              className="iconaScegliProfilo"
+              md={3}
+              style={{ padding: "20px" }}
+            >
               <a onClick={setBasicModal}>
                 <Image
                   src="https://cdn-icons-png.flaticon.com/512/1828/1828843.png"
                   style={{ width: "100%" }}
-                  
                 />
               </a>
               <h3 className="textCenter mt-3 Lato-bold">Elimina</h3>
@@ -158,7 +167,9 @@ const ProfileSelection = () => {
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title style={{color: '#658ffb'}} className="textCenter">Aggiungi un profilo</Modal.Title>
+          <Modal.Title style={{ color: "#658ffb" }} className="textCenter">
+            Aggiungi un profilo
+          </Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -190,70 +201,86 @@ const ProfileSelection = () => {
           <Row className="mt-3 mb-3 d-flex align-items-center justify-content-center">
             <Row style={{ width: "90%" }}>
               <Col>
-                <MDBBtn className="icon-scegli-profilo myButton" onClick={setIcon1}>
+                <MDBBtn
+                  className="icon-scegli-profilo myButton"
+                  onClick={setIcon1}
+                >
                   <img style={{ width: "60px" }} src={icon1} alt="icon1" />
                 </MDBBtn>
               </Col>
               <Col>
-                <MDBBtn className="icon-scegli-profilo myButton" onClick={setIcon2}>
+                <MDBBtn
+                  className="icon-scegli-profilo myButton"
+                  onClick={setIcon2}
+                >
                   <img style={{ width: "60px" }} src={icon2} alt="icon1" />
                 </MDBBtn>
               </Col>
               <Col>
-                <MDBBtn className="icon-scegli-profilo myButton" onClick={setIcon3}>
+                <MDBBtn
+                  className="icon-scegli-profilo myButton"
+                  onClick={setIcon3}
+                >
                   <img style={{ width: "60px" }} src={icon3} alt="icon1" />
                 </MDBBtn>
               </Col>
               <Col>
-                <MDBBtn className="icon-scegli-profilo myButton" onClick={setIcon4}>
+                <MDBBtn
+                  className="icon-scegli-profilo myButton"
+                  onClick={setIcon4}
+                >
                   <img style={{ width: "60px" }} src={icon4} alt="icon1" />
                 </MDBBtn>
               </Col>
             </Row>
-          </Row> 
-        <Row className="d-flex align-items-center justify-content-center mt-5">
-          <Col md={4}>
-          <MDBBtn  className="myButton" onClick={addProfile}>Aggiungi</MDBBtn>
-          </Col>          
+          </Row>
+          <Row className="d-flex align-items-center justify-content-center mt-5">
+            <Col md={4}>
+              <MDBBtn className="myButton" onClick={addProfile}>
+                Aggiungi
+              </MDBBtn>
+            </Col>
           </Row>
         </Modal.Body>
-
       </Modal>
 
-
-
-
-          <MDBModal show={basicModal} setShow={setBasicModal} tabIndex='-1'>
-      <MDBModalDialog>
-        <MDBModalContent>
-          <MDBModalHeader>
-            <MDBModalTitle className="textCenter bg-text-dark-liver">Elimina un profilo</MDBModalTitle>
-            <MDBBtn className='btn-close' color='none' onClick={toggleShow}></MDBBtn>
-          </MDBModalHeader>
-          <MDBModalBody>
-          <Form.Control
-              type="text"
-              placeholder="Scrivi il nome del profilo da eliminare"
-              onChange={changeElimina}
-            />
-          </MDBModalBody>
-          {eliminaTrovato === false ? <p style={{color: 'red'}} className="textCenter">Scrivi esattamente il nome del profilo da eliminare</p> : <></>}
-          <MDBModalFooter>
-          <Button variant="danger" onClick={removeProfile}>
-            Elimina
-          </Button>
-          </MDBModalFooter>
-        </MDBModalContent>
-      </MDBModalDialog>
-    </MDBModal>
-
-
+      <MDBModal show={basicModal} setShow={setBasicModal} tabIndex="-1">
+        <MDBModalDialog>
+          <MDBModalContent>
+            <MDBModalHeader>
+              <MDBModalTitle className="textCenter bg-text-dark-liver">
+                Elimina un profilo
+              </MDBModalTitle>
+              <MDBBtn
+                className="btn-close"
+                color="none"
+                onClick={toggleShow}
+              ></MDBBtn>
+            </MDBModalHeader>
+            <MDBModalBody>
+              <Form.Control
+                type="text"
+                placeholder="Scrivi il nome del profilo da eliminare"
+                onChange={changeElimina}
+              />
+            </MDBModalBody>
+            {eliminaTrovato === false ? (
+              <p style={{ color: "red" }} className="textCenter">
+                Scrivi esattamente il nome del profilo da eliminare
+              </p>
+            ) : (
+              <></>
+            )}
+            <MDBModalFooter>
+              <Button variant="danger" onClick={removeProfile}>
+                Elimina
+              </Button>
+            </MDBModalFooter>
+          </MDBModalContent>
+        </MDBModalDialog>
+      </MDBModal>
     </>
   );
 };
 
 export default ProfileSelection;
-     
-
-
-  

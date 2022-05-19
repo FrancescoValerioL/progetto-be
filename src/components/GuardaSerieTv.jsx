@@ -40,9 +40,6 @@ const GuardaSerieTv = (props) => {
         <Modal.Header className="bg-cornflower-blue-reverse" closeButton>
           <Modal.Title className="Lato-title textCenter">
             {props.nome}{" "}
-            <MDBBtn className="myButton" style={{ padding: "5px", left: "3%" }}>
-              <MDBIcon fas icon="heart" />
-            </MDBBtn>
           </Modal.Title>
         </Modal.Header>
         <Modal.Body className="bg-platinum">
@@ -60,6 +57,9 @@ const GuardaSerieTv = (props) => {
           <MDBBtn className="myButton">
             <MDBIcon fab icon="whatsapp" />
           </MDBBtn>
+          <MDBBtn className="myButton" style={{position: 'absolute', right: '20px' }}>
+              <MDBIcon fas icon="heart" />
+            </MDBBtn>
         </ModalFooter>
       </Modal>
     </>
