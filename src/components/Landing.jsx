@@ -40,31 +40,31 @@ const Landing = () => {
       </Container>
 
       <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
+        <Modal.Header className="bg-platinum" closeButton>
           <Modal.Title className="modale" style={{ color: "#658ffb" }}>
             Registrati
           </Modal.Title>
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body className="bg-platinum">
           <Form>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Inserisci il tuo nome</Form.Label>
-              <Form.Control type="email" placeholder="Nome" />
+              <Form.Control className="bg-platinum" type="email" placeholder="Nome" />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Inserisci il tuo cognome</Form.Label>
-              <Form.Control type="email" placeholder="Cognome" />
+              <Form.Control className="bg-platinum" type="email" placeholder="Cognome" />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Inserisci l'email</Form.Label>
-              <Form.Control type="email" placeholder="Email" />
+              <Form.Control className="bg-platinum" type="email" placeholder="Email" />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Inserisci la Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" />
+              <Form.Control className="bg-platinum" type="password" placeholder="Password" />
             </Form.Group>
 
             <MDBBtn className="myButton mt-3" type="submit">

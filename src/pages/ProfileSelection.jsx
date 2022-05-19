@@ -135,7 +135,7 @@ const ProfileSelection = () => {
             ) : (
               <></>
             )}
-            <Col
+            {profili.length < 4 ? (<Col
               className="iconaScegliProfilo"
               md={3}
               style={{ padding: "20px" }}
@@ -147,8 +147,8 @@ const ProfileSelection = () => {
                 />
               </a>
               <h3 className="textCenter mt-3 Lato-bold">Aggiungi</h3>
-            </Col>
-            <Col
+            </Col>) : <></>}
+            { profili.length > 0 ? (<Col
               className="iconaScegliProfilo"
               md={3}
               style={{ padding: "20px" }}
@@ -160,24 +160,25 @@ const ProfileSelection = () => {
                 />
               </a>
               <h3 className="textCenter mt-3 Lato-bold">Elimina</h3>
-            </Col>
+            </Col>) : <></>}
           </Row>
         </Row>
       </Container>
 
       <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
+        <Modal.Header className="bg-platinum" closeButton>
           <Modal.Title style={{ color: "#658ffb" }} className="textCenter">
             Aggiungi un profilo
           </Modal.Title>
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body className="bg-platinum">
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Inserisci il tuo nome</Form.Label>
             <Form.Control
               type="text"
               placeholder="Nome"
               onChange={changeNome}
+              className="bg-platinum"
             />
             <Form.Label className="mt-3">
               Scegli il genere che preferisci
@@ -247,7 +248,7 @@ const ProfileSelection = () => {
       <MDBModal show={basicModal} setShow={setBasicModal} tabIndex="-1">
         <MDBModalDialog>
           <MDBModalContent>
-            <MDBModalHeader>
+            <MDBModalHeader className="bg-platinum">
               <MDBModalTitle className="textCenter bg-text-dark-liver">
                 Elimina un profilo
               </MDBModalTitle>
@@ -257,22 +258,24 @@ const ProfileSelection = () => {
                 onClick={toggleShow}
               ></MDBBtn>
             </MDBModalHeader>
-            <MDBModalBody>
+            <MDBModalBody className="bg-platinum">
               <Form.Control
                 type="text"
                 placeholder="Scrivi il nome del profilo da eliminare"
                 onChange={changeElimina}
-              />
-            </MDBModalBody>
-            {eliminaTrovato === false ? (
-              <p style={{ color: "red" }} className="textCenter">
+                className="bg-platinum"
+              /> 
+              {eliminaTrovato === false ? (
+              <p style={{ color: "red" }} className="textCenter mt-3">
                 Scrivi esattamente il nome del profilo da eliminare
               </p>
             ) : (
               <></>
             )}
-            <MDBModalFooter>
-              <Button variant="danger" onClick={removeProfile}>
+            </MDBModalBody>
+
+            <MDBModalFooter className="bg-platinum">
+              <Button className="myButton" onClick={removeProfile}>
                 Elimina
               </Button>
             </MDBModalFooter>
