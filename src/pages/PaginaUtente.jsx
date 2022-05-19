@@ -25,29 +25,28 @@ const PaginaUtente = () => {
   const [newPassword, setNewPassword] = useState("");
   const [verifica, setVerifica] = useState(false);
 
-
-
   const changeNome = (event) => {
     setNome(event.target.value);
   };
 
   const changeNewPassword = (event) => {
     setNewPassword(event.target.value);
-    provaPassword()
   };
 
   const changePassword = (event) => {
     setPassword(event.target.value);
   };
+  useEffect(() => {
+    provaPassword();
+  }, [password, newPassword]);
 
   const provaPassword = () => {
-    if (password === newPassword)
-      setVerifica(false)
-    else{
-      setVerifica(true)
+    if (password.normalize() == newPassword.normalize()) {
+      setVerifica(true);
+    } else if (password != newPassword) {
+      setVerifica(false);
     }
   };
-
 
   const changeGenre = (event) => {
     setGenere(event.target.lastChild.nodeValue);
@@ -179,7 +178,7 @@ const PaginaUtente = () => {
             <MDBBtn
               className="myButton posizioneButtonSmartphone"
               block
-              href={verifica === false ? '/home' : ''}        
+              href={verifica === true ? "/home" : ""}
             >
               Conferma Modifiche
             </MDBBtn>
