@@ -21,10 +21,34 @@ const PaginaUtente = () => {
   const [nome, setNome] = useState("Profilo1");
   const [genere, setGenere] = useState("Fantasy");
   const [img, setImg] = useState(icon1);
+  const [password, setPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
+  const [verifica, setVerifica] = useState(false);
+
+
 
   const changeNome = (event) => {
     setNome(event.target.value);
   };
+
+  const changeNewPassword = (event) => {
+    setNewPassword(event.target.value);
+    provaPassword()
+  };
+
+  const changePassword = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const provaPassword = () => {
+    if (password === newPassword)
+      setVerifica(false)
+    else{
+      setVerifica(true)
+    }
+  };
+
+
   const changeGenre = (event) => {
     setGenere(event.target.lastChild.nodeValue);
     console.log("Evento attivato");
@@ -77,14 +101,15 @@ const PaginaUtente = () => {
               type="password"
               id="form1Example2"
               label="Nuova Password"
+              onChange={changePassword}
             />
             <MDBInput
               className="mb-4"
               type="password"
               id="form1Example2"
               label="Ripeti Nuova Password"
+              onChange={changeNewPassword}
             />
-
             <Row className="mb-4">
               <Col className="d-flex justify-content-center"></Col>
               <Col>
@@ -154,7 +179,7 @@ const PaginaUtente = () => {
             <MDBBtn
               className="myButton posizioneButtonSmartphone"
               block
-              href="/home"
+              href={verifica === false ? '/home' : ''}        
             >
               Conferma Modifiche
             </MDBBtn>
