@@ -109,6 +109,13 @@ const PaginaUtente = () => {
               label="Ripeti Nuova Password"
               onChange={changeNewPassword}
             />
+            {verifica ? (
+              <p className="textCenter" style={{ color: "red" }}>
+                Le Password Deveno Coincidere
+              </p>
+            ) : (
+              ""
+            )}
             <Row className="mb-4">
               <Col className="d-flex justify-content-center"></Col>
               <Col>
