@@ -31,15 +31,27 @@ const NavbarHome = () => {
             placement="end"
           >
             <Offcanvas.Header closeButton>
-              <Offcanvas.Title id={`offcanvasNavbarLabel-expand-xl`}>
-              </Offcanvas.Title>
+              <Offcanvas.Title
+                id={`offcanvasNavbarLabel-expand-xl`}
+              ></Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
               <Nav className="justify-content-end flex-grow-1 pe-3">
-                <Nav.Link className="linkNavBar" href="/home">Home</Nav.Link>
-                <Nav.Link className="linkNavBar" href="/serieTV">Serie TV</Nav.Link>
-                <Nav.Link className="linkNavBar" href="/film">Film</Nav.Link>
-                <Nav.Link className="linkNavBar" href="/preferiti">Preferiti</Nav.Link>
+                <Nav.Link className="linkNavBar" href="/home">
+                  Home
+                </Nav.Link>
+                <Nav.Link className="linkNavBar" href="/serieTV">
+                  Serie TV
+                </Nav.Link>
+                <Nav.Link className="linkNavBar" href="/film">
+                  Film
+                </Nav.Link>
+                <Nav.Link className="linkNavBar" href="/preferiti">
+                  Preferiti
+                </Nav.Link>
+                <Nav.Link className="linkNavBar" href="/paginaUtente">
+                  <MDBIcon far icon="user-circle" size="lg" />
+                </Nav.Link>
                 <Nav.Link className="linkNavBar" href="/notifiche">
                   <MDBIcon far icon="bell" size="lg" />
                 </Nav.Link>
