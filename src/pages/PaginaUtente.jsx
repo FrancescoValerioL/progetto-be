@@ -24,6 +24,8 @@ const PaginaUtente = () => {
   const [password, setPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [verifica, setVerifica] = useState(false);
+  const [verifica2, setVerifica2] = useState(true);
+
 
   const changeNome = (event) => {
     setNome(event.target.value);
@@ -45,6 +47,14 @@ const PaginaUtente = () => {
       setVerifica(true);
     } else if (password != newPassword) {
       setVerifica(false);
+    }
+  };
+
+  const provaVerifica = () => {
+    if (password.normalize() !== newPassword.normalize()) {
+      setVerifica2(false);
+    } else if (password === newPassword) {
+      setVerifica(true);
     }
   };
 
@@ -109,12 +119,10 @@ const PaginaUtente = () => {
               label="Ripeti Nuova Password"
               onChange={changeNewPassword}
             />
-            {verifica ? (
+            {verifica2 ? ('') : (
               <p className="textCenter" style={{ color: "red" }}>
                 Le Password Deveno Coincidere
               </p>
-            ) : (
-              ""
             )}
             <Row className="mb-4">
               <Col className="d-flex justify-content-center"></Col>
@@ -185,7 +193,9 @@ const PaginaUtente = () => {
             <MDBBtn
               className="myButton posizioneButtonSmartphone"
               block
-              href={verifica === true ? "/home" : ""}
+              href={password.length > 0 
+                ? (verifica === true ? "/home" : "") : ('')}
+              onClick={provaVerifica}
             >
               Conferma Modifiche
             </MDBBtn>
