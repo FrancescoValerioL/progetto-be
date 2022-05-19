@@ -1,9 +1,9 @@
 import { MDBBtn } from "mdb-react-ui-kit";
 import { useState } from "react";
-import { Modal, Row } from "react-bootstrap";
+import { Modal, Row, ModalFooter } from "react-bootstrap";
 import { selectVideo } from "../scripts/selectVideo";
 import ReactPlayer from "react-player";
-
+import { MDBIcon } from "mdb-react-ui-kit";
 const GuardaFilmSlider = (props) => {
   const [show, setShow] = useState(false);
   const [trailer, setTrailer] = useState("");
@@ -47,6 +47,20 @@ const GuardaFilmSlider = (props) => {
             <p className="textPlayVideo">{props.text}</p>
           </Row>
         </Modal.Body>
+        <ModalFooter className="d-flex align-items-center justify-content-center bg-platinum">
+          <MDBBtn className="myButton" style={{ marginRight: "20px" }}>
+            <MDBIcon fab icon="facebook" />
+          </MDBBtn>
+          <MDBBtn className="myButton">
+            <MDBIcon fab icon="whatsapp" />
+          </MDBBtn>
+          <MDBBtn
+            className="myButton"
+            style={{ position: "absolute", right: "20px" }}
+          >
+            <MDBIcon fas icon="heart" />
+          </MDBBtn>
+        </ModalFooter>
       </Modal>
     </>
   );
