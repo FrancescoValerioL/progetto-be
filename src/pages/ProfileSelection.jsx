@@ -135,7 +135,7 @@ const ProfileSelection = () => {
             ) : (
               <></>
             )}
-            <Col
+            {profili.length < 4 ? (<Col
               className="iconaScegliProfilo"
               md={3}
               style={{ padding: "20px" }}
@@ -147,7 +147,7 @@ const ProfileSelection = () => {
                 />
               </a>
               <h3 className="textCenter mt-3 Lato-bold">Aggiungi</h3>
-            </Col>
+            </Col>) : <></>}
             <Col
               className="iconaScegliProfilo"
               md={3}
