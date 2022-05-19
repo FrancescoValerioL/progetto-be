@@ -80,7 +80,7 @@ const PaginaUtente = () => {
     <>
       <NavbarHome />
       <Container className="mt-5">
-        <Row>
+        <Row className="d-flex align-items-center justify-content-center">
           <Col
             className="iconaScegliProfilo"
             md={3}
@@ -90,7 +90,7 @@ const PaginaUtente = () => {
             <h3 className="textCenter mt-3 Lato-bold">{nome}</h3>
             <p className="textCenter mt-3">{genere}</p>
           </Col>
-          <Col>
+          <Col md={10}>
             <MDBInput
               className="mb-4"
               type="text"
@@ -124,9 +124,8 @@ const PaginaUtente = () => {
                 Le Password Deveno Coincidere
               </p>
             )}
-            <Row className="mb-4">
-              <Col className="d-flex justify-content-center"></Col>
-              <Col>
+            <Row className="mb-4 d-flex align-items-center justify-content-center">
+              <Col md={4}>
                 <DropdownButton
                   className="posizioneButtonSmartphone"
                   title="Seleziona genere preferito"
@@ -152,9 +151,9 @@ const PaginaUtente = () => {
                 </DropdownButton>
               </Col>
             </Row>
-            <Form.Label className="mt-3">Scegli un icona</Form.Label>
+            <Form.Label className="mt-4 textCenter">Scegli una nuova icona</Form.Label>
             <Row className="mt-3 mb-3 d-flex align-items-center justify-content-center">
-              <Row style={{ width: "90%" }}>
+              <Row style={{ width: "60%" }}>
                 <Col>
                   <MDBBtn
                     className="icon-scegli-profilo myButton"
@@ -189,16 +188,19 @@ const PaginaUtente = () => {
                 </Col>
               </Row>
             </Row>
-
+            <Row className="d-flex align-items-center justify-content-center mt-3">
+                <Col md={3}>
             <MDBBtn
-              className="myButton posizioneButtonSmartphone"
+              className="myButton posizioneButtonSmartphone mt-3"
               block
               href={password.length > 0 
                 ? (verifica === true ? "/home" : "") : ('')}
               onClick={provaVerifica}
             >
-              Conferma Modifiche
+              Conferma
             </MDBBtn>
+            </Col>
+            </Row>
           </Col>
         </Row>
       </Container>
