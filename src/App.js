@@ -9,6 +9,7 @@ import SerieTV from "./pages/SerieTV";
 import Preferiti from "./pages/Preferiti";
 import Notifiche from "./pages/Notifiche";
 import RicercaPerTitolo from "./pages/RicercaPerTitolo";
+import PaginaUtente from "./pages/PaginaUtente";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/preferiti" element={<Preferiti />} />
         <Route path="/notifiche" element={<Notifiche />} />
         <Route path="/ricerca" element={<RicercaPerTitolo />} />
+        <Route path="/paginaUtente" element={<PaginaUtente />} />
       </Routes>
     </BrowserRouter>
   );
