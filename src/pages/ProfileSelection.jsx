@@ -38,6 +38,7 @@ const ProfileSelection = () => {
       nome: "Profilo 1",
       genere: "Fantascienza",
       img: icon1,
+      id: Math.random(),
     },
   ]);
   const [nome, setNome] = useState("");
@@ -91,6 +92,7 @@ const ProfileSelection = () => {
         nome: nome,
         genere: genere,
         img: img,
+        id: Math.random(),
       });
 
     handleClose();
@@ -121,6 +123,7 @@ const ProfileSelection = () => {
             {profili.length >= 0 ? (
               profili.map((el) => (
                 <Col
+                  key={el.id}
                   className="iconaScegliProfilo"
                   md={3}
                   style={{ padding: "20px" }}
@@ -135,32 +138,40 @@ const ProfileSelection = () => {
             ) : (
               <></>
             )}
-            {profili.length < 4 ? (<Col
-              className="iconaScegliProfilo"
-              md={3}
-              style={{ padding: "20px" }}
-            >
-              <a onClick={handleShow}>
-                <Image
-                  src="https://cdn-icons-png.flaticon.com/512/1057/1057240.png"
-                  style={{ width: "100%" }}
-                />
-              </a>
-              <h3 className="textCenter mt-3 Lato-bold">Aggiungi</h3>
-            </Col>) : <></>}
-            { profili.length > 0 ? (<Col
-              className="iconaScegliProfilo"
-              md={3}
-              style={{ padding: "20px" }}
-            >
-              <a onClick={setBasicModal}>
-                <Image
-                  src="https://cdn-icons-png.flaticon.com/512/1828/1828843.png"
-                  style={{ width: "100%" }}
-                />
-              </a>
-              <h3 className="textCenter mt-3 Lato-bold">Elimina</h3>
-            </Col>) : <></>}
+            {profili.length < 4 ? (
+              <Col
+                className="iconaScegliProfilo"
+                md={3}
+                style={{ padding: "20px" }}
+              >
+                <a onClick={handleShow}>
+                  <Image
+                    src="https://cdn-icons-png.flaticon.com/512/1057/1057240.png"
+                    style={{ width: "100%" }}
+                  />
+                </a>
+                <h3 className="textCenter mt-3 Lato-bold">Aggiungi</h3>
+              </Col>
+            ) : (
+              <></>
+            )}
+            {profili.length > 0 ? (
+              <Col
+                className="iconaScegliProfilo"
+                md={3}
+                style={{ padding: "20px" }}
+              >
+                <a onClick={setBasicModal}>
+                  <Image
+                    src="https://cdn-icons-png.flaticon.com/512/1828/1828843.png"
+                    style={{ width: "100%" }}
+                  />
+                </a>
+                <h3 className="textCenter mt-3 Lato-bold">Elimina</h3>
+              </Col>
+            ) : (
+              <></>
+            )}
           </Row>
         </Row>
       </Container>
@@ -264,14 +275,14 @@ const ProfileSelection = () => {
                 placeholder="Scrivi il nome del profilo da eliminare"
                 onChange={changeElimina}
                 className="bg-platinum"
-              /> 
+              />
               {eliminaTrovato === false ? (
-              <p style={{ color: "red" }} className="textCenter mt-3">
-                Scrivi esattamente il nome del profilo da eliminare
-              </p>
-            ) : (
-              <></>
-            )}
+                <p style={{ color: "red" }} className="textCenter mt-3">
+                  Scrivi esattamente il nome del profilo da eliminare
+                </p>
+              ) : (
+                <></>
+              )}
             </MDBModalBody>
 
             <MDBModalFooter className="bg-platinum">
