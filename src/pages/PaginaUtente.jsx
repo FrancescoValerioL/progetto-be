@@ -26,9 +26,9 @@ const PaginaUtente = () => {
     setNome(event.target.value);
   };
   const changeGenre = (event) => {
-    setGenere(event.target.value);
+    setGenere(event.target.lastChild.nodeValue);
     console.log("Evento attivato");
-    console.log(event.value);
+    console.log(event.target);
   };
   const setIcon1 = () => {
     setImg(icon1);
@@ -65,30 +65,7 @@ const PaginaUtente = () => {
               label={nome}
               onChange={changeNome}
             />
-            <DropdownButton
-              variant="primary"
-              id="dropdown-basic-button"
-              title="Seleziona genere preferito"
-            >
-              <Dropdown.Item onClick={changeGenre} value="Azione">
-                Azione
-              </Dropdown.Item>
-              <Dropdown.Item onClick={changeGenre} value="Commedia">
-                Commedia
-              </Dropdown.Item>
-              <Dropdown.Item onClick={changeGenre} value="Fantasy">
-                Fantasy
-              </Dropdown.Item>
-              <Dropdown.Item onClick={changeGenre} value="Fantascienza">
-                Fantascienza
-              </Dropdown.Item>
-              <Dropdown.Item onClick={changeGenre} value="Giallo">
-                Giallo
-              </Dropdown.Item>
-              <Dropdown.Item onClick={changeGenre} value="Horror">
-                Horror
-              </Dropdown.Item>
-            </DropdownButton>
+
             <MDBInput
               className="mb-4"
               type="password"
@@ -110,7 +87,31 @@ const PaginaUtente = () => {
 
             <Row className="mb-4">
               <Col className="d-flex justify-content-center"></Col>
-              <Col></Col>
+              <Col>
+                <DropdownButton
+                  className="posizioneButtonSmartphone"
+                  title="Seleziona genere preferito"
+                >
+                  <Dropdown.Item onClick={changeGenre} value="Azione">
+                    Azione
+                  </Dropdown.Item>
+                  <Dropdown.Item onClick={changeGenre} value="Commedia">
+                    Commedia
+                  </Dropdown.Item>
+                  <Dropdown.Item onClick={changeGenre} value="Fantasy">
+                    Fantasy
+                  </Dropdown.Item>
+                  <Dropdown.Item onClick={changeGenre} value="Fantascienza">
+                    Fantascienza
+                  </Dropdown.Item>
+                  <Dropdown.Item onClick={changeGenre} value="Giallo">
+                    Giallo
+                  </Dropdown.Item>
+                  <Dropdown.Item onClick={changeGenre} value="Horror">
+                    Horror
+                  </Dropdown.Item>
+                </DropdownButton>
+              </Col>
             </Row>
             <Form.Label className="mt-3">Scegli un icona</Form.Label>
             <Row className="mt-3 mb-3 d-flex align-items-center justify-content-center">
@@ -150,7 +151,11 @@ const PaginaUtente = () => {
               </Row>
             </Row>
 
-            <MDBBtn block href="/home">
+            <MDBBtn
+              className="myButton posizioneButtonSmartphone"
+              block
+              href="/home"
+            >
               Conferma Modifiche
             </MDBBtn>
           </Col>
